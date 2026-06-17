@@ -37,10 +37,10 @@ function HomePage() {
       <VideoHero />
 
       {/* SERVICES PREVIEW */}
-      <section className="relative py-24 px-6 max-w-7xl mx-auto">
+      <section className="relative py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
           <SectionLabel>Crafted for Men & Women</SectionLabel>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
             Our Services
           </h2>
           <div className="mx-auto mt-5 h-px w-20 bg-gold" />
@@ -57,7 +57,7 @@ function HomePage() {
       </section>
 
       {/* BRAND QUOTE */}
-      <section className="bg-gradient-to-r from-black-deep via-charcoal to-black-deep py-24 px-6">
+      <section className="bg-gradient-to-r from-black-deep via-charcoal to-black-deep py-16 sm:py-24 px-6">
         <Reveal className="relative max-w-3xl mx-auto text-center">
           <Quote className="absolute -top-4 -left-2 md:-left-12 h-20 w-20 text-gold/20" />
           <p className="font-display italic text-2xl md:text-3xl text-off-white leading-relaxed text-balance">
@@ -70,7 +70,7 @@ function HomePage() {
       </section>
 
       {/* STATS */}
-      <section className="bg-charcoal py-20 px-6 border-y border-gold/15">
+      <section className="bg-charcoal py-14 sm:py-20 px-6 border-y border-gold/15">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {STATS.map((s) => (
             <StatPillar key={s.label} {...s} />
@@ -79,11 +79,11 @@ function HomePage() {
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <SectionLabel>About Us</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
               Our Pride is Our Professionals
             </h2>
             <p className="mt-6 text-off-white/80 leading-relaxed">
@@ -136,11 +136,11 @@ function HomePage() {
       </section>
 
       {/* GALLERY TEASER */}
-      <section className="bg-charcoal py-24 px-6">
+      <section className="bg-charcoal py-16 sm:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <Reveal className="text-center mb-12">
             <SectionLabel>Before & After</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
               Transformations
             </h2>
             <div className="mx-auto mt-5 h-px w-20 bg-gold" />
@@ -175,10 +175,10 @@ function HomePage() {
       </section>
 
       {/* REVIEWS TEASER */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
           <SectionLabel>1,168+ Five-Star Reviews</SectionLabel>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
             What Our Clients Say
           </h2>
           <div className="mx-auto mt-5 h-px w-20 bg-gold" />

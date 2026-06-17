@@ -16,7 +16,7 @@ const stagger: Variants = {
 
 export function VideoHero() {
   return (
-    <section className="relative h-screen min-h-[640px] w-full overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-[100svh] sm:min-h-[640px] w-full overflow-hidden flex items-center justify-center pt-24 pb-16 sm:py-0">
       {/* Background — gradient fallback (video can be added later) */}
       <div
         aria-hidden
@@ -50,7 +50,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-semibold text-off-white text-balance leading-[1.05]"
+          className="mt-4 sm:mt-6 font-display text-4xl sm:text-6xl md:text-7xl font-semibold text-off-white text-balance leading-[1.08]"
         >
           Where <em className="text-gold not-italic font-display italic">Style</em> Meets Confidence
         </motion.h1>
@@ -60,7 +60,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-6 text-off-white/85 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
+          className="mt-5 sm:mt-6 text-off-white/85 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
         >
           Fashion-forward cuts, color &amp; care for men and women. Book your transformation today.
         </motion.p>
@@ -70,7 +70,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto"
         >
           <Link
             to="/book"

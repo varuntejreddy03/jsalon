@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-black-deep border-t border-gold/20 mt-0">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
         <div>
-          <Logo size={48} />
+          <Logo size={88} />
           <p className="mt-5 font-accent italic text-gold text-sm tracking-widest">
             COMFORTABLY STYLISH
           </p>

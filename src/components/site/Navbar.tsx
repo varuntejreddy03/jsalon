@@ -40,7 +40,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <Logo size={scrolled ? 36 : 42} />
+          <Logo size={scrolled ? 52 : 64} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

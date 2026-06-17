@@ -37,10 +37,10 @@ function HomePage() {
       <VideoHero />
 
       {/* SERVICES PREVIEW */}
-      <section className="relative py-24 px-6 max-w-7xl mx-auto">
+      <section className="relative py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
           <SectionLabel>Crafted for Men & Women</SectionLabel>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
             Our Services
           </h2>
           <div className="mx-auto mt-5 h-px w-20 bg-gold" />
@@ -57,7 +57,7 @@ function HomePage() {
       </section>
 
       {/* BRAND QUOTE */}
-      <section className="bg-gradient-to-r from-black-deep via-charcoal to-black-deep py-24 px-6">
+      <section className="bg-gradient-to-r from-black-deep via-charcoal to-black-deep py-16 sm:py-24 px-6">
         <Reveal className="relative max-w-3xl mx-auto text-center">
           <Quote className="absolute -top-4 -left-2 md:-left-12 h-20 w-20 text-gold/20" />
           <p className="font-display italic text-2xl md:text-3xl text-off-white leading-relaxed text-balance">
@@ -70,7 +70,7 @@ function HomePage() {
       </section>
 
       {/* STATS */}
-      <section className="bg-charcoal py-20 px-6 border-y border-gold/15">
+      <section className="bg-charcoal py-14 sm:py-20 px-6 border-y border-gold/15">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {STATS.map((s) => (
             <StatPillar key={s.label} {...s} />
@@ -79,11 +79,11 @@ function HomePage() {
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <SectionLabel>About Us</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
               Our Pride is Our Professionals
             </h2>
             <p className="mt-6 text-off-white/80 leading-relaxed">
@@ -115,19 +115,19 @@ function HomePage() {
             </Link>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[400px]">
-            <div className="relative">
-              <div className="absolute inset-0 -m-12 rounded-full border border-gold/30 animate-rotate-slow" />
+          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[340px] sm:min-h-[400px] overflow-hidden">
+            <div className="relative w-[260px] sm:w-[320px] aspect-square flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border border-gold/30 animate-rotate-slow" />
               <div
-                className="absolute inset-0 -m-20 rounded-full border border-dashed border-gold/15 animate-rotate-slow"
+                className="absolute -inset-6 sm:-inset-8 rounded-full border border-dashed border-gold/15 animate-rotate-slow"
                 style={{ animationDuration: "40s", animationDirection: "reverse" }}
               />
-              <div className="absolute inset-0 -m-4 rounded-full bg-gold/10 blur-3xl" />
-              <LettermarkJ size={260} className="relative" />
-              <div className="absolute -top-2 -right-12 bg-black-deep border border-gold/40 rounded-sm px-4 py-2 text-xs font-accent text-gold tracking-widest">
+              <div className="absolute inset-4 rounded-full bg-gold/10 blur-3xl" />
+              <LettermarkJ size={220} className="relative" />
+              <div className="absolute -top-2 right-0 sm:-right-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-accent text-gold tracking-widest">
                 EST. ANANTAPUR
               </div>
-              <div className="absolute -bottom-2 -left-14 bg-black-deep border border-gold/40 rounded-sm px-4 py-2 text-xs font-body text-off-white">
+              <div className="absolute -bottom-2 left-0 sm:-left-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-body text-off-white">
                 <span className="text-gold">4.9 ★</span> Google
               </div>
             </div>
@@ -136,17 +136,17 @@ function HomePage() {
       </section>
 
       {/* GALLERY TEASER */}
-      <section className="bg-charcoal py-24 px-6">
+      <section className="bg-charcoal py-16 sm:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <Reveal className="text-center mb-12">
             <SectionLabel>Before & After</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
               Transformations
             </h2>
             <div className="mx-auto mt-5 h-px w-20 bg-gold" />
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {GALLERY.slice(0, 4).map((g, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {GALLERY.slice(0, 6).map((g, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-sm group">
                   <img
@@ -175,10 +175,10 @@ function HomePage() {
       </section>
 
       {/* REVIEWS TEASER */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
           <SectionLabel>1,168+ Five-Star Reviews</SectionLabel>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
             What Our Clients Say
           </h2>
           <div className="mx-auto mt-5 h-px w-20 bg-gold" />

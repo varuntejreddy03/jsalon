@@ -115,19 +115,19 @@ function HomePage() {
             </Link>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[400px]">
-            <div className="relative">
-              <div className="absolute inset-0 -m-12 rounded-full border border-gold/30 animate-rotate-slow" />
+          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[340px] sm:min-h-[400px] overflow-hidden">
+            <div className="relative w-[260px] sm:w-[320px] aspect-square flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border border-gold/30 animate-rotate-slow" />
               <div
-                className="absolute inset-0 -m-20 rounded-full border border-dashed border-gold/15 animate-rotate-slow"
+                className="absolute -inset-6 sm:-inset-8 rounded-full border border-dashed border-gold/15 animate-rotate-slow"
                 style={{ animationDuration: "40s", animationDirection: "reverse" }}
               />
-              <div className="absolute inset-0 -m-4 rounded-full bg-gold/10 blur-3xl" />
-              <LettermarkJ size={260} className="relative" />
-              <div className="absolute -top-2 -right-12 bg-black-deep border border-gold/40 rounded-sm px-4 py-2 text-xs font-accent text-gold tracking-widest">
+              <div className="absolute inset-4 rounded-full bg-gold/10 blur-3xl" />
+              <LettermarkJ size={220} className="relative" />
+              <div className="absolute -top-2 right-0 sm:-right-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-accent text-gold tracking-widest">
                 EST. ANANTAPUR
               </div>
-              <div className="absolute -bottom-2 -left-14 bg-black-deep border border-gold/40 rounded-sm px-4 py-2 text-xs font-body text-off-white">
+              <div className="absolute -bottom-2 left-0 sm:-left-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-body text-off-white">
                 <span className="text-gold">4.9 ★</span> Google
               </div>
             </div>

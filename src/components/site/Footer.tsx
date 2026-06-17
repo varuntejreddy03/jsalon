@@ -62,7 +62,7 @@ export function Footer() {
           </ul>
           <div className="flex items-center gap-4 mt-5">
             <a
-              href="https://instagram.com/jsalonunisex"
+              href="https://www.instagram.com/jsalon_anantapur"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"

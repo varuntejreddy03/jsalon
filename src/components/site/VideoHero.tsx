@@ -16,7 +16,7 @@ const stagger: Variants = {
 
 export function VideoHero() {
   return (
-    <section className="relative h-screen min-h-[640px] w-full overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-[100svh] sm:min-h-[640px] w-full overflow-hidden flex items-center justify-center pt-24 pb-16 sm:py-0">
       {/* Background — gradient fallback (video can be added later) */}
       <div
         aria-hidden

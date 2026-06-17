@@ -60,7 +60,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-6 text-off-white/85 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
+          className="mt-5 sm:mt-6 text-off-white/85 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
         >
           Fashion-forward cuts, color &amp; care for men and women. Book your transformation today.
         </motion.p>

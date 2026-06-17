@@ -145,8 +145,8 @@ function HomePage() {
             </h2>
             <div className="mx-auto mt-5 h-px w-20 bg-gold" />
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {GALLERY.slice(0, 4).map((g, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {GALLERY.slice(0, 6).map((g, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-sm group">
                   <img

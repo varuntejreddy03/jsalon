@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Particles } from "./Particles";
 
-const stagger = {
+import type { Variants } from "framer-motion";
+
+const stagger: Variants = {
   hidden: { opacity: 0, y: 18 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.15 + i * 0.18, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: 0.15 + i * 0.18, duration: 0.8, ease: "easeOut" },
   }),
 };
 

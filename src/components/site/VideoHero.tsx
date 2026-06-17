@@ -70,7 +70,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto"
         >
           <Link
             to="/book"

@@ -50,7 +50,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-semibold text-off-white text-balance leading-[1.05]"
+          className="mt-4 sm:mt-6 font-display text-4xl sm:text-6xl md:text-7xl font-semibold text-off-white text-balance leading-[1.08]"
         >
           Where <em className="text-gold not-italic font-display italic">Style</em> Meets Confidence
         </motion.h1>

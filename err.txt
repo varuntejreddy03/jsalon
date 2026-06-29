@@ -46,3 +46,4 @@ Error: h3 swallowed SSR error: {"status":500,"unhandled":true,"message":"HTTPErr
     at normalizeCatastrophicSsrResponse (C:\Users\varun\Downloads\jsaloon\gilded-glow-salon\src\server.ts:33:47)
     at async Object.fetch (C:\Users\varun\Downloads\jsaloon\gilded-glow-salon\src\server.ts:45:14)
     at async file:///c:/Users/varun/Downloads/jsaloon/gilded-glow-salon/node_modules/@tanstack/start-plugin-core/dist/esm/vite/dev-server-plugin/plugin.js:79:36
+[33mThe plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the [1mresolve.tsconfigPaths[22m option. You can remove the plugin and set [1mresolve.tsconfigPaths: true[22m in your Vite config instead.[39m

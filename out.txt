@@ -12,3 +12,5 @@
 [2m1:33:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2mC:/Users/varun/Downloads/jsaloon/gilded-glow-salon/src/components/site/Navbar.tsx[22m
 [2m1:42:18 pm[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
 [2m1:42:23 pm[22m [36m[1m[vite][22m[39m server restarted.
+[2m1:43:29 pm[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m1:43:30 pm[22m [36m[1m[vite][22m[39m server restarted.

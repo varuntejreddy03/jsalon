@@ -6,21 +6,24 @@
   --color-gold: #b8860b;
   --color-gold-light: #d4a843;
   --color-gold-shine: #f5d080;
-  --color-black-deep: #0a0a0a;
-  --color-charcoal: #1a1a1a;
-  --color-off-white: #f0ede8;
-  --color-gray-muted: #888888;
-  --font-display: "Playfair Display", serif;
-  --font-body: "Nunito Sans", sans-serif;
-  --font-accent: "Cinzel", serif;
-  --shadow-gold-glow: 0 0 20px rgba(184, 134, 11, 0.3);
-  --shadow-gold-glow-lg: 0 0 40px rgba(184, 134, 11, 0.5);
+  --color-black-deep: #000000;
+  --color-charcoal: #0a0a0c;
+  --color-surface: #101012;
+  --color-off-white: #fcfdff;
+  --color-gray-muted: #a1a4a5;
+  --color-hairline: rgba(255, 255, 255, 0.06);
+  --color-hairline-strong: rgba(255, 255, 255, 0.14);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-accent: "Inter", system-ui, sans-serif;
+  --shadow-gold-glow: 0 0 20px rgba(184, 134, 11, 0.25);
+  --shadow-gold-glow-lg: 0 0 40px rgba(184, 134, 11, 0.4);
 }
 
 @theme inline {
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,25 +46,25 @@
 }
 
 :root {
-  --radius: 0.25rem;
-  --background: #0a0a0a;
-  --foreground: #f0ede8;
-  --card: #1a1a1a;
-  --card-foreground: #f0ede8;
-  --popover: #1a1a1a;
-  --popover-foreground: #f0ede8;
+  --radius: 0.5rem;
+  --background: #000000;
+  --foreground: #fcfdff;
+  --card: #0a0a0c;
+  --card-foreground: #fcfdff;
+  --popover: #0a0a0c;
+  --popover-foreground: #fcfdff;
   --primary: #b8860b;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #f0ede8;
-  --muted: #1a1a1a;
-  --muted-foreground: #888888;
+  --primary-foreground: #000000;
+  --secondary: #101012;
+  --secondary-foreground: #fcfdff;
+  --muted: #101012;
+  --muted-foreground: #a1a4a5;
   --accent: #b8860b;
-  --accent-foreground: #0a0a0a;
+  --accent-foreground: #000000;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #f0ede8;
-  --border: rgba(184, 134, 11, 0.2);
-  --input: rgba(184, 134, 11, 0.3);
+  --destructive-foreground: #fcfdff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
   --ring: #b8860b;
 }
 
@@ -129,13 +132,15 @@
 
 @utility font-display {
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 @utility font-body {
   font-family: var(--font-body);
 }
 @utility font-accent {
   font-family: var(--font-accent);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
+  font-weight: 500;
 }
 
 @utility shadow-gold {
@@ -154,17 +159,25 @@
     border-color: var(--border);
   }
   html, body {
-    background-color: #0a0a0a;
-    color: #f0ede8;
+    background-color: #000000;
+    color: #fcfdff;
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
+  h1 { font-weight: 600; }
+  h2 { font-weight: 600; }
+  h3 { font-weight: 500; }
   ::selection {
     background-color: #b8860b;
-    color: #0a0a0a;
+    color: #000000;
   }
 }
 

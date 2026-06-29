@@ -20,7 +20,7 @@ export function ServiceCard({ service, expanded = false, image }: Props) {
           <Icon className="h-6 w-6" />
         </div>
         {expanded && (
-          <span className="font-accent text-[10px] text-gold tracking-widest border border-gold/40 rounded-sm px-2.5 py-1">
+          <span className="font-accent text-[10px] text-gold tracking-wider border border-gold/40 rounded-sm px-2.5 py-1">
             {service.price}
           </span>
         )}
@@ -44,3 +44,5 @@ export function ServiceCard({ service, expanded = false, image }: Props) {
     </article>
   );
 }
+
+

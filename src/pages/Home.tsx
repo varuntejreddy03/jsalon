@@ -28,7 +28,7 @@ export function HomePage() {
         <div className="mt-12 text-center">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 hover:border-gold transition-all"
+            className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 hover:border-gold transition-all"
           >
             View All Services <ArrowRight className="h-4 w-4" />
           </Link>
@@ -44,7 +44,7 @@ export function HomePage() {
             and enhance your salon experience.
           </p>
           <div className="mx-auto mt-8 h-px w-16 bg-gold" />
-          <p className="mt-4 font-accent text-xs text-gold tracking-widest">— J SALON UNISEX</p>
+          <p className="mt-4 font-accent text-xs text-gold tracking-wider">— J SALON UNISEX</p>
         </Reveal>
       </section>
 
@@ -75,7 +75,7 @@ export function HomePage() {
             </p>
             <Link
               to="/about"
-              className="mt-8 inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
+              className="mt-8 inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
             >
               Learn More <ArrowRight className="h-4 w-4" />
             </Link>
@@ -124,7 +124,7 @@ export function HomePage() {
           <div className="mt-10 text-center">
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
             >
               View Full Gallery <ArrowRight className="h-4 w-4" />
             </Link>
@@ -153,7 +153,7 @@ export function HomePage() {
         <div className="mt-12 text-center">
           <Link
             to="/reviews"
-            className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
           >
             Read All Reviews <ArrowRight className="h-4 w-4" />
           </Link>
@@ -164,3 +164,5 @@ export function HomePage() {
     </>
   );
 }
+
+

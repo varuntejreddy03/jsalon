@@ -14,7 +14,7 @@ export function Logo({ className = "", size = 44, variant = "onDark" }: Props) {
             "drop-shadow(0 0 14px rgba(184,134,11,0.35)) drop-shadow(0 2px 6px rgba(0,0,0,0.35))",
         }}
       >
-        J<span className="font-accent text-[0.4em] tracking-[0.2em] ml-1 uppercase">Salon</span>
+        J<span className="font-accent text-[0.4em] tracking-wide ml-1 uppercase">Salon</span>
       </span>
     </div>
   );
@@ -41,3 +41,5 @@ export function LettermarkJ({
     </span>
   );
 }
+
+

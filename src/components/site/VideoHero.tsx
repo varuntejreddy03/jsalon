@@ -38,7 +38,7 @@ export function VideoHero() {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div custom={0} initial="hidden" animate="show" variants={stagger}>
-          <span className="font-accent text-xs sm:text-sm text-gold tracking-[0.35em] uppercase">
+          <span className="font-accent text-xs sm:text-sm text-gold tracking-wider uppercase">
             Anantapur's Premier Salon
           </span>
         </motion.div>
@@ -101,3 +101,5 @@ export function VideoHero() {
     </section>
   );
 }
+
+

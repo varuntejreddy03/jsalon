@@ -53,7 +53,7 @@ export function BookPage() {
 
       <section className="py-20 px-6">
         <Reveal className="max-w-2xl mx-auto text-center">
-          <p className="font-accent text-xs text-gold tracking-widest uppercase">Prefer to talk?</p>
+          <p className="font-accent text-xs text-gold tracking-wider uppercase">Prefer to talk?</p>
           <h2 className="mt-3 font-display text-4xl md:text-5xl text-off-white">Call Us Directly</h2>
           <a
             href={PHONE_HREF}
@@ -70,3 +70,5 @@ export function BookPage() {
     </>
   );
 }
+
+

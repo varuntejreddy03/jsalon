@@ -16,7 +16,7 @@ export function GalleryFilter({ active, onChange }: Props) {
         <button
           key={t}
           onClick={() => onChange(t)}
-          className={`px-5 py-2 rounded-sm border text-sm font-accent tracking-widest uppercase transition-all ${
+          className={`px-5 py-2 rounded-sm border text-sm font-accent tracking-wider uppercase transition-all ${
             active === t
               ? "bg-gold text-black-deep border-gold"
               : "border-gold/30 text-off-white hover:border-gold hover:text-gold"
@@ -30,3 +30,5 @@ export function GalleryFilter({ active, onChange }: Props) {
 }
 
 export type { Category };
+
+

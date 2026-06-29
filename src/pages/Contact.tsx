@@ -37,21 +37,21 @@ export function ContactPage() {
                 <li className="flex gap-4">
                   <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-accent text-[11px] text-gold tracking-widest uppercase">Address</div>
+                    <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Address</div>
                     <p className="mt-1 text-off-white leading-relaxed">{ADDRESS_LINE}</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <Phone className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-accent text-[11px] text-gold tracking-widest uppercase">Phone</div>
+                    <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Phone</div>
                     <a href={PHONE_HREF} className="mt-1 inline-block text-off-white text-lg hover:text-gold transition-colors">{PHONE}</a>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <Clock className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-accent text-[11px] text-gold tracking-widest uppercase">Hours</div>
+                    <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Hours</div>
                     <p className="mt-1 text-off-white">{HOURS}</p>
                   </div>
                 </li>
@@ -70,7 +70,7 @@ export function ContactPage() {
                 <button onClick={() => setMapLoaded(true)} className="absolute inset-0 flex flex-col items-center justify-center bg-charcoal hover:bg-black-deep transition-colors">
                   <MapPin className="h-12 w-12 text-gold" />
                   <span className="mt-4 font-display text-2xl text-off-white">View Map</span>
-                  <span className="mt-1 text-xs text-gray-muted font-accent tracking-widest uppercase">Click to load</span>
+                  <span className="mt-1 text-xs text-gray-muted font-accent tracking-wider uppercase">Click to load</span>
                 </button>
               ) : (
                 <iframe title="J Salon Unisex location" src={`https://www.google.com/maps?q=${MAP_QUERY}&output=embed`} className="absolute inset-0 w-full h-full" loading="lazy" />
@@ -109,3 +109,5 @@ export function ContactPage() {
     </>
   );
 }
+
+

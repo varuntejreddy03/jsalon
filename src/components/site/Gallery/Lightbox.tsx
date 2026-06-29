@@ -74,7 +74,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
             onClick={(e) => e.stopPropagation()}
             className="max-h-[88vh] max-w-[92vw] object-contain rounded-sm border border-gold/30 shadow-gold-lg"
           />
-          <div className="absolute bottom-6 left-0 right-0 text-center text-gold font-accent text-xs tracking-widest">
+          <div className="absolute bottom-6 left-0 right-0 text-center text-gold font-accent text-xs tracking-wider">
             {items[index].category} — {items[index].alt}
           </div>
         </motion.div>
@@ -82,3 +82,5 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
     </AnimatePresence>
   );
 }
+
+

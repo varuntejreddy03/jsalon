@@ -35,7 +35,7 @@ export function ReviewsPage() {
               href="https://www.google.com/maps/search/?api=1&query=J+Salon+Unisex+Anantapur"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-gold text-sm font-accent tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
+              className="mt-6 inline-flex items-center gap-2 text-gold text-sm font-accent tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
             >
               View on Google <ExternalLink className="h-4 w-4" />
             </a>
@@ -64,3 +64,5 @@ export function ReviewsPage() {
     </>
   );
 }
+
+

@@ -43,7 +43,7 @@ export function Navbar() {
       <div className="hidden lg:flex max-w-7xl mx-auto px-8 items-center justify-between">
         <Link to="/" aria-label="J Salon Unisex — Home" className="shrink-0">
           <span className="font-display text-4xl font-bold text-gold tracking-tight">
-            J<span className="font-accent text-base tracking-[0.2em] text-off-white/90 ml-2 uppercase">Salon</span>
+            J<span className="font-accent text-base tracking-wide text-off-white/90 ml-2 uppercase">Salon</span>
           </span>
         </Link>
 
@@ -54,7 +54,7 @@ export function Navbar() {
               to={n.to}
               end
               className={({ isActive }) =>
-                `relative font-body text-[13px] uppercase tracking-[0.16em] py-1 transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${
+                `relative font-body text-[13px] uppercase tracking-wide py-1 transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${
                   isActive
                     ? "text-gold after:w-full"
                     : "text-off-white/80 hover:text-gold after:w-0 hover:after:w-full"
@@ -85,7 +85,7 @@ export function Navbar() {
           </a>
           <Link
             to="/book"
-            className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-2 text-[12px] font-semibold uppercase tracking-[0.15em] text-black-deep transition-all duration-300 hover:bg-gold-light hover:shadow-gold"
+            className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-2 text-[12px] font-semibold uppercase tracking-wide text-black-deep transition-all duration-300 hover:bg-gold-light hover:shadow-gold"
           >
             Book Now
           </Link>
@@ -104,7 +104,7 @@ export function Navbar() {
 
         <Link to="/" onClick={() => setOpen(false)} aria-label="J Salon Unisex — Home">
           <span className="font-display text-3xl font-bold text-gold">
-            J<span className="font-accent text-base tracking-[0.2em] text-off-white/90 ml-1.5 uppercase">Salon</span>
+            J<span className="font-accent text-base tracking-wide text-off-white/90 ml-1.5 uppercase">Salon</span>
           </span>
         </Link>
 
@@ -142,7 +142,7 @@ export function Navbar() {
           <Link
             to="/book"
             onClick={() => setOpen(false)}
-            className="mt-5 inline-flex items-center justify-center rounded-sm bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-black-deep hover:bg-gold-light"
+            className="mt-5 inline-flex items-center justify-center rounded-sm bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black-deep hover:bg-gold-light"
           >
             Book Appointment
           </Link>
@@ -164,3 +164,5 @@ export function Navbar() {
     </header>
   );
 }
+
+

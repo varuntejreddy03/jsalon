@@ -45,7 +45,7 @@ export function PageHero({
           <p className="mt-5 text-off-white/75 text-lg max-w-2xl mx-auto font-body">{subtitle}</p>
         )}
         {breadcrumbs && (
-          <nav className="mt-8 flex justify-center items-center gap-2 text-xs font-accent text-gray-muted tracking-widest uppercase">
+          <nav className="mt-8 flex justify-center items-center gap-2 text-xs font-accent text-gray-muted tracking-wider uppercase">
             {breadcrumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-2">
                 {c.to ? (
@@ -65,3 +65,5 @@ export function PageHero({
     </section>
   );
 }
+
+

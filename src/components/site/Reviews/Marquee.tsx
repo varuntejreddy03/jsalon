@@ -17,3 +17,5 @@ export function Marquee({ reviews, direction = "left" }: Props) {
     </div>
   );
 }
+
+

@@ -142,7 +142,7 @@ export function BookingForm() {
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <label className="font-accent text-[11px] text-gold tracking-widest uppercase">
+    <label className="font-accent text-[11px] text-gold tracking-wider uppercase">
       {children}
     </label>
   );
@@ -174,3 +174,5 @@ function Field({
     </div>
   );
 }
+
+

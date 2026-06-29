@@ -3,7 +3,7 @@ type Props = { children: React.ReactNode; className?: string };
 export function SectionLabel({ children, className = "" }: Props) {
   return (
     <span
-      className={`inline-block font-accent text-xs sm:text-sm text-gold tracking-[0.3em] uppercase ${className}`}
+      className={`inline-block font-accent text-xs sm:text-sm text-gold tracking-wide uppercase ${className}`}
     >
       {children}
     </span>
@@ -17,3 +17,5 @@ export function GoldDivider({ className = "" }: { className?: string }) {
     />
   );
 }
+
+

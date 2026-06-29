@@ -8,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
         <div>
           <Logo size={88} />
-          <p className="mt-5 font-accent italic text-gold text-sm tracking-widest">
+          <p className="mt-5 font-accent italic text-gold text-sm tracking-wider">
             COMFORTABLY STYLISH
           </p>
           <p className="mt-4 text-gray-muted text-sm leading-relaxed max-w-sm">
@@ -17,7 +17,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-accent text-gold text-xs tracking-widest mb-5">EXPLORE</h3>
+          <h3 className="font-accent text-gold text-xs tracking-wider mb-5">EXPLORE</h3>
           <ul className="space-y-2.5 text-sm font-body">
             {[
               { to: "/", label: "Home" },
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-accent text-gold text-xs tracking-widest mb-5">VISIT US</h3>
+          <h3 className="font-accent text-gold text-xs tracking-wider mb-5">VISIT US</h3>
           <ul className="space-y-3 text-sm text-off-white">
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" />
@@ -94,3 +94,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

@@ -4,14 +4,22 @@ import { Reveal } from "./Reveal";
 type Props = {
   heading?: string;
   subtext?: string;
+  bgImage?: string;
 };
 
 export function CTAStrip({
   heading = "Ready for Your Transformation?",
   subtext = "Walk in or call ahead. We're open 7 days a week, 8 AM to 9 PM.",
+  bgImage,
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-black-deep via-[#1a1200] to-black-deep py-24 px-6">
+      {bgImage && (
+        <>
+          <img src={bgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black-deep/75" />
+        </>
+      )}
       <div
         aria-hidden
         className="absolute -top-32 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-gold/20 blur-3xl animate-orb-pulse"

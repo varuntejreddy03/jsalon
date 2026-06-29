@@ -3,7 +3,7 @@ import { Phone, Clock, ClipboardList, PhoneCall, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/shared/Reveal";
 import { BookingForm } from "@/components/site/Booking/BookingForm";
-import { PHONE, PHONE_HREF, HOURS } from "@/components/site/data";
+import { PHONE, PHONE_HREF, HOURS, IMAGES } from "@/components/site/data";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -35,6 +35,7 @@ function BookPage() {
         subtitle="Tell us when and what — we'll call back to confirm."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Book" }]}
         minHeight="min-h-[35vh]"
+        image={IMAGES.barberChair01}
       />
 
       <section className="py-16 px-6">

@@ -8,7 +8,7 @@ import { CTAStrip } from "@/components/site/shared/CTAStrip";
 import { SectionLabel } from "@/components/site/shared/SectionLabel";
 import { Reveal } from "@/components/site/shared/Reveal";
 import { LettermarkJ } from "@/components/site/Logo";
-import { REVIEWS, STATS, GALLERY } from "@/components/site/data";
+import { REVIEWS, STATS, IMAGES } from "@/components/site/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -115,7 +115,12 @@ function HomePage() {
             </Link>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[340px] sm:min-h-[400px] overflow-hidden">
+          <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[340px] sm:min-h-[400px] overflow-hidden rounded-sm">
+            <img
+              src={IMAGES.reception01}
+              alt="J Salon reception"
+              className="absolute inset-0 w-full h-full object-cover rounded-sm opacity-40"
+            />
             <div className="relative w-[260px] sm:w-[320px] aspect-square flex items-center justify-center">
               <div className="absolute inset-0 rounded-full border border-gold/30 animate-rotate-slow" />
               <div
@@ -139,26 +144,23 @@ function HomePage() {
       <section className="bg-charcoal py-16 sm:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <Reveal className="text-center mb-12">
-            <SectionLabel>Before & After</SectionLabel>
+            <SectionLabel>Our Space</SectionLabel>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl text-off-white">
-              Transformations
+              Step Inside J Salon
             </h2>
             <div className="mx-auto mt-5 h-px w-20 bg-gold" />
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-            {GALLERY.slice(0, 6).map((g, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[IMAGES.reception01, IMAGES.hairStation01, IMAGES.facialRoom01, IMAGES.barberChair01, IMAGES.nailBar01, IMAGES.stylingRow01].map((src, i) => (
               <Reveal key={i} delay={i * 0.08}>
-                <div className="relative aspect-[3/4] overflow-hidden rounded-sm group">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-sm group">
                   <img
-                    src={g.src}
-                    alt={g.alt}
+                    src={src}
+                    alt="J Salon interior"
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black-deep/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
-                  <span className="absolute bottom-3 left-3 font-accent text-[10px] text-gold tracking-widest">
-                    {g.category}
-                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </Reveal>
             ))}
@@ -168,7 +170,7 @@ function HomePage() {
               to="/gallery"
               className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
             >
-              See All Transformations <ArrowRight className="h-4 w-4" />
+              View Full Gallery <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -202,7 +204,7 @@ function HomePage() {
         </div>
       </section>
 
-      <CTAStrip />
+      <CTAStrip bgImage={IMAGES.stylingRow01} />
     </>
   );
 }

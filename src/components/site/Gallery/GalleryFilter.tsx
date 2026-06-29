@@ -1,11 +1,13 @@
-type Category = "All" | "Hair" | "Color" | "Skin" | "Nails" | "Bridal";
+import type { GalleryCategory } from "../data";
+
+type Category = "All" | GalleryCategory;
 
 type Props = {
   active: Category;
   onChange: (c: Category) => void;
 };
 
-const TABS: Category[] = ["All", "Hair", "Color", "Skin", "Nails", "Bridal"];
+const TABS: Category[] = ["All", "Interior", "Hair", "Color", "Skin", "Nails", "Bridal"];
 
 export function GalleryFilter({ active, onChange }: Props) {
   return (

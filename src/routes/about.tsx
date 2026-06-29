@@ -5,7 +5,7 @@ import { SectionLabel } from "@/components/site/shared/SectionLabel";
 import { Reveal } from "@/components/site/shared/Reveal";
 import { StatPillar } from "@/components/site/Stats/StatPillar";
 import { LettermarkJ } from "@/components/site/Logo";
-import { STATS } from "@/components/site/data";
+import { STATS, IMAGES } from "@/components/site/data";
 import { Sparkles, Wallet, Award } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -37,6 +37,7 @@ function AboutPage() {
         title="About J Salon Unisex"
         subtitle="A salon where confidence is styled in, not styled on."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
+        image={IMAGES.stylingRow01}
       />
 
       {/* Story */}
@@ -60,6 +61,11 @@ function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.15} className="relative flex items-center justify-center min-h-[400px]">
+            <img
+              src={IMAGES.reception02}
+              alt="J Salon reception"
+              className="absolute inset-0 w-full h-full object-cover rounded-sm opacity-30"
+            />
             <div className="relative">
               <div className="absolute inset-0 -m-12 rounded-full border border-gold/30 animate-rotate-slow" />
               <div
@@ -116,6 +122,21 @@ function AboutPage() {
 
       {/* Team */}
       <section className="py-24 px-6 max-w-7xl mx-auto">
+        {/* Our Space */}
+        <Reveal className="text-center mb-14">
+          <SectionLabel>Our Space</SectionLabel>
+          <h2 className="mt-3 font-display text-4xl text-off-white">Step Inside</h2>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-4 mb-24">
+          {[IMAGES.reception01, IMAGES.hairStation01, IMAGES.facialRoom01].map((src, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={src} alt="J Salon interior" className="w-full h-full object-cover" />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
         <Reveal className="text-center mb-14">
           <SectionLabel>Meet the Team</SectionLabel>
           <h2 className="mt-3 font-display text-4xl text-off-white">Our Pride</h2>

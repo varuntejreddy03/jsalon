@@ -9,6 +9,7 @@ type Props = {
   subtitle?: string;
   breadcrumbs?: Crumb[];
   minHeight?: string;
+  image?: string;
 };
 
 export function PageHero({
@@ -17,12 +18,20 @@ export function PageHero({
   subtitle,
   breadcrumbs,
   minHeight = "min-h-[45vh]",
+  image,
 }: Props) {
   return (
     <section
       className={`relative ${minHeight} flex items-center justify-center pt-32 pb-16 px-6 overflow-hidden border-b border-gold/15`}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-black-deep to-black-deep" />
+      {image ? (
+        <>
+          <img src={image} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black-deep/70" />
+        </>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-black-deep to-black-deep" />
+      )}
       <div
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/10 blur-3xl"

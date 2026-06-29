@@ -11,6 +11,7 @@ import {
   HOURS,
   MAP_QUERY,
   SERVICES,
+  IMAGES,
 } from "@/components/site/data";
 
 export const Route = createFileRoute("/contact")({
@@ -58,6 +59,7 @@ function ContactPage() {
         title="Find Us"
         subtitle="Walk in, call ahead, or drop us a message — we'd love to see you."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]}
+        image={IMAGES.reception01}
       />
 
       <section className="py-20 px-6 max-w-7xl mx-auto">

@@ -6,7 +6,7 @@ import { MasonryGrid } from "@/components/site/Gallery/MasonryGrid";
 import { GalleryFilter, type Category } from "@/components/site/Gallery/GalleryFilter";
 import { Lightbox } from "@/components/site/Gallery/Lightbox";
 import { CTAStrip } from "@/components/site/shared/CTAStrip";
-import { GALLERY } from "@/components/site/data";
+import { GALLERY, IMAGES } from "@/components/site/data";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -42,6 +42,7 @@ function GalleryPage() {
         title="Transformations"
         subtitle="Real client work — cuts, color, skin, nails and bridal looks straight from our chair."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Gallery" }]}
+        image={IMAGES.stylingRow01}
       />
 
       <section className="py-16 px-6 max-w-7xl mx-auto">

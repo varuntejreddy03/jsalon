@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Particles } from "./Particles";
+import { IMAGES } from "./data";
 
 import type { Variants } from "framer-motion";
 
@@ -17,11 +18,13 @@ const stagger: Variants = {
 export function VideoHero() {
   return (
     <section className="relative min-h-[100svh] sm:min-h-[640px] w-full overflow-hidden flex items-center justify-center pt-24 pb-16 sm:py-0">
-      {/* Background — gradient fallback (video can be added later) */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-br from-black-deep via-charcoal to-black-deep"
+      {/* Background — real salon photo */}
+      <img
+        src={IMAGES.reception01}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
       />
+      <div aria-hidden className="absolute inset-0 bg-black-deep/60" />
       <div
         aria-hidden
         className="absolute inset-0 opacity-60"
@@ -30,12 +33,7 @@ export function VideoHero() {
             "radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.25), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(212,168,67,0.18), transparent 55%)",
         }}
       />
-      {/* When a video asset is ready, drop it here:
-          <video autoPlay muted loop playsInline poster={poster} className="absolute inset-0 w-full h-full object-cover">
-            <source src={mp4} type="video/mp4" />
-          </video>
-      */}
-      <div aria-hidden className="absolute inset-0 bg-black-deep/55" />
+
       <Particles count={36} className="opacity-70" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">

@@ -5,7 +5,7 @@ import { Marquee } from "@/components/site/Reviews/Marquee";
 import { ReviewCard } from "@/components/site/Reviews/ReviewCard";
 import { CTAStrip } from "@/components/site/shared/CTAStrip";
 import { Reveal } from "@/components/site/shared/Reveal";
-import { REVIEWS } from "@/components/site/data";
+import { REVIEWS, IMAGES } from "@/components/site/data";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -34,6 +34,7 @@ function ReviewsPage() {
         title="What Our Clients Say"
         subtitle="1,168+ five-star reviews on Google — and counting."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Reviews" }]}
+        image={IMAGES.portraitWall01}
       />
 
       {/* Rating summary */}

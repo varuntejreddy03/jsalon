@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
 import { VideoHero } from "@/components/site/VideoHero";
 import { ServicesGrid } from "@/components/site/Services/ServicesGrid";
@@ -10,28 +10,7 @@ import { Reveal } from "@/components/site/shared/Reveal";
 import { LettermarkJ } from "@/components/site/Logo";
 import { REVIEWS, STATS, IMAGES } from "@/components/site/data";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "J Salon Unisex — Anantapur's Premier Hair, Skin & Nail Salon" },
-      {
-        name: "description",
-        content:
-          "Fashion-forward salon in Anantapur for men & women. Hair, color, skincare, nails, bridal — 4.9★ with 1,168+ Google reviews. Open 7 days, 8 AM–9 PM.",
-      },
-      { property: "og:title", content: "J Salon Unisex — Anantapur's Premier Salon" },
-      {
-        property: "og:description",
-        content: "Cuts, color, skincare, nails & bridal — 4.9★ on Google.",
-      },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: HomePage,
-});
-
-function HomePage() {
+export function HomePage() {
   return (
     <>
       <VideoHero />
@@ -94,19 +73,6 @@ function HomePage() {
               Our hair products are exceptional. Our nail products are non-toxic. Our skin
               products are miraculous. And our professionals? They are our greatest pride.
             </p>
-            <ul className="mt-6 space-y-2.5 text-off-white">
-              {[
-                "Fashion-forward techniques",
-                "Non-toxic nail products",
-                "Miraculous skincare range",
-                "Affordable luxury pricing",
-              ].map((u) => (
-                <li key={u} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                  <span className="text-sm">{u}</span>
-                </li>
-              ))}
-            </ul>
             <Link
               to="/about"
               className="mt-8 inline-flex items-center gap-2 text-gold font-accent text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
@@ -123,18 +89,8 @@ function HomePage() {
             />
             <div className="relative w-[260px] sm:w-[320px] aspect-square flex items-center justify-center">
               <div className="absolute inset-0 rounded-full border border-gold/30 animate-rotate-slow" />
-              <div
-                className="absolute -inset-6 sm:-inset-8 rounded-full border border-dashed border-gold/15 animate-rotate-slow"
-                style={{ animationDuration: "40s", animationDirection: "reverse" }}
-              />
               <div className="absolute inset-4 rounded-full bg-gold/10 blur-3xl" />
               <LettermarkJ size={220} className="relative" />
-              <div className="absolute -top-2 right-0 sm:-right-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-accent text-gold tracking-widest">
-                EST. ANANTAPUR
-              </div>
-              <div className="absolute -bottom-2 left-0 sm:-left-6 bg-black-deep border border-gold/40 rounded-sm px-3 py-1.5 text-[10px] sm:text-xs font-body text-off-white">
-                <span className="text-gold">4.9 ★</span> Google
-              </div>
             </div>
           </Reveal>
         </div>

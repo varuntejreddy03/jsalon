@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Star, ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Marquee } from "@/components/site/Reviews/Marquee";
@@ -7,24 +6,7 @@ import { CTAStrip } from "@/components/site/shared/CTAStrip";
 import { Reveal } from "@/components/site/shared/Reveal";
 import { REVIEWS, IMAGES } from "@/components/site/data";
 
-export const Route = createFileRoute("/reviews")({
-  head: () => ({
-    meta: [
-      { title: "Client Reviews — J Salon Unisex" },
-      {
-        name: "description",
-        content: "1,168+ five-star Google reviews from J Salon Unisex clients in Anantapur.",
-      },
-      { property: "og:title", content: "Reviews — J Salon Unisex" },
-      { property: "og:description", content: "What our 1,168+ Google-reviewed clients say." },
-      { property: "og:url", content: "/reviews" },
-    ],
-    links: [{ rel: "canonical", href: "/reviews" }],
-  }),
-  component: ReviewsPage,
-});
-
-function ReviewsPage() {
+export function ReviewsPage() {
   const rowA = REVIEWS.slice(0, 6);
   const rowB = REVIEWS.slice(6, 12);
   return (
@@ -37,7 +19,6 @@ function ReviewsPage() {
         image={IMAGES.portraitWall01}
       />
 
-      {/* Rating summary */}
       <section className="py-16 px-6 max-w-4xl mx-auto">
         <Reveal>
           <div className="bg-charcoal border border-gold/25 rounded-sm p-10 text-center">
@@ -51,7 +32,7 @@ function ReviewsPage() {
               Based on <span className="text-gold font-semibold">1,168+</span> Google Reviews
             </p>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=J+Salon+Unisex+Anantapur`}
+              href="https://www.google.com/maps/search/?api=1&query=J+Salon+Unisex+Anantapur"
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2 text-gold text-sm font-accent tracking-widest uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
@@ -62,13 +43,11 @@ function ReviewsPage() {
         </Reveal>
       </section>
 
-      {/* Marquees */}
       <section className="py-12 space-y-6 overflow-hidden">
         <Marquee reviews={rowA} direction="left" />
         <Marquee reviews={rowB} direction="right" />
       </section>
 
-      {/* Full grid */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.map((r, i) => (
@@ -78,17 +57,6 @@ function ReviewsPage() {
               </div>
             </Reveal>
           ))}
-        </div>
-
-        <div className="mt-14 text-center">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=J+Salon+Unisex+Anantapur"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm border border-gold bg-transparent px-6 py-3 text-sm font-medium tracking-wide text-gold hover:bg-gold hover:text-black-deep transition-all"
-          >
-            Leave a Review <ExternalLink className="h-4 w-4" />
-          </a>
         </div>
       </section>
 

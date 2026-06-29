@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Instagram } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
@@ -8,25 +7,7 @@ import { Lightbox } from "@/components/site/Gallery/Lightbox";
 import { CTAStrip } from "@/components/site/shared/CTAStrip";
 import { GALLERY, IMAGES } from "@/components/site/data";
 
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Transformations Gallery — J Salon Unisex" },
-      {
-        name: "description",
-        content:
-          "Before & after hair, color, skincare, nails and bridal transformations from J Salon Unisex in Anantapur.",
-      },
-      { property: "og:title", content: "Transformations — J Salon Unisex" },
-      { property: "og:description", content: "Real client transformations from J Salon Unisex." },
-      { property: "og:url", content: "/gallery" },
-    ],
-    links: [{ rel: "canonical", href: "/gallery" }],
-  }),
-  component: GalleryPage,
-});
-
-function GalleryPage() {
+export function GalleryPage() {
   const [active, setActive] = useState<Category>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -62,7 +43,6 @@ function GalleryPage() {
         onNext={() => setLightboxIndex((i) => (i == null ? null : (i + 1) % filtered.length))}
       />
 
-      {/* Instagram banner */}
       <section className="bg-charcoal py-16 px-6 border-y border-gold/15">
         <div className="max-w-4xl mx-auto text-center">
           <Instagram className="h-10 w-10 text-gold mx-auto" />

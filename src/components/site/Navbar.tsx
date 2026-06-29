@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, Instagram } from "lucide-react";
 
@@ -49,15 +49,20 @@ export function Navbar() {
 
         <nav className="flex items-center gap-8">
           {NAV.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
-              activeProps={{ className: "!text-gold after:w-full" }}
-              activeOptions={{ exact: true }}
-              className="relative font-body text-[13px] uppercase tracking-[0.16em] text-off-white/80 hover:text-gold transition-colors py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+              end
+              className={({ isActive }) =>
+                `relative font-body text-[13px] uppercase tracking-[0.16em] py-1 transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${
+                  isActive
+                    ? "text-gold after:w-full"
+                    : "text-off-white/80 hover:text-gold after:w-0 hover:after:w-full"
+                }`
+              }
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -120,16 +125,19 @@ export function Navbar() {
       >
         <nav className="flex flex-col px-6 py-6 gap-1">
           {NAV.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
+              end
               onClick={() => setOpen(false)}
-              activeProps={{ className: "text-gold border-gold/40" }}
-              activeOptions={{ exact: true }}
-              className="font-display text-xl py-3 text-off-white border-b border-gold/10 hover:text-gold transition-colors"
+              className={({ isActive }) =>
+                `font-display text-xl py-3 border-b border-gold/10 transition-colors ${
+                  isActive ? "text-gold border-gold/40" : "text-off-white hover:text-gold"
+                }`
+              }
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
           <Link
             to="/book"

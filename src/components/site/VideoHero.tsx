@@ -1,105 +1,123 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Particles } from "./Particles";
 import { IMAGES } from "./data";
+import heroVideo from "@/assets/jsalon-hero.mp4";
 
 import type { Variants } from "framer-motion";
 
 const stagger: Variants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 20 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.15 + i * 0.18, duration: 0.8, ease: "easeOut" },
+    transition: { delay: 0.3 + i * 0.2, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] },
   }),
 };
 
 export function VideoHero() {
   return (
-    <section className="relative min-h-[100svh] sm:min-h-[640px] w-full overflow-hidden flex items-center justify-center pt-24 pb-16 sm:py-0">
-      {/* Background — real salon photo */}
-      <img
-        src={IMAGES.reception01}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div aria-hidden className="absolute inset-0 bg-black-deep/60" />
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.25), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(212,168,67,0.18), transparent 55%)",
-        }}
-      />
-
-      <Particles count={36} className="opacity-70" />
-
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.div custom={0} initial="hidden" animate="show" variants={stagger}>
-          <span className="font-accent text-xs sm:text-sm text-gold tracking-wider uppercase">
-            Anantapur's Premier Salon
-          </span>
-        </motion.div>
-
-        <motion.h1
-          custom={1}
-          initial="hidden"
-          animate="show"
-          variants={stagger}
-          className="mt-4 sm:mt-6 font-display text-4xl sm:text-6xl md:text-7xl font-semibold text-off-white text-balance leading-[1.08]"
+    <>
+      {/* DESKTOP — full viewport video with overlay */}
+      <section className="relative h-[100svh] w-full overflow-hidden hidden sm:flex items-center justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={IMAGES.reception01}
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          Where <em className="text-gold not-italic font-display italic">Style</em> Meets Confidence
-        </motion.h1>
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/45" />
 
-        <motion.p
-          custom={2}
-          initial="hidden"
-          animate="show"
-          variants={stagger}
-          className="mt-5 sm:mt-6 text-off-white/85 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
-        >
-          Fashion-forward cuts, color &amp; care for men and women. Book your transformation today.
-        </motion.p>
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <motion.div custom={0} initial="hidden" animate="show" variants={stagger}>
+            <span className="font-accent text-xs text-gold tracking-wider uppercase">
+              Anantapur's Premier Salon
+            </span>
+          </motion.div>
 
-        <motion.div
-          custom={3}
-          initial="hidden"
-          animate="show"
-          variants={stagger}
-          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto"
-        >
-          <Link
-            to="/book"
-            className="inline-flex items-center justify-center rounded-sm bg-gold px-8 py-3.5 text-base font-medium text-black-deep transition-all hover:bg-gold-light hover:scale-105 shadow-gold"
+          <motion.h1
+            custom={1}
+            initial="hidden"
+            animate="show"
+            variants={stagger}
+            className="mt-5 font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white text-balance leading-[1.1]"
           >
-            Book Appointment
-          </Link>
-          <Link
-            to="/services"
-            className="inline-flex items-center justify-center rounded-sm border border-off-white/70 bg-transparent px-8 py-3.5 text-base font-medium text-off-white hover:border-gold hover:text-gold transition-colors"
+            Where <em className="text-gold not-italic italic">Style</em> Meets Confidence
+          </motion.h1>
+
+          <motion.p
+            custom={2}
+            initial="hidden"
+            animate="show"
+            variants={stagger}
+            className="mt-4 text-white/75 text-base md:text-lg max-w-lg mx-auto font-body leading-relaxed"
           >
-            Explore Services
-          </Link>
-        </motion.div>
+            Fashion-forward cuts, color &amp; care for men and women.
+          </motion.p>
+
+          <motion.div custom={3} initial="hidden" animate="show" variants={stagger} className="mt-9">
+            <Link
+              to="/book"
+              className="inline-flex items-center justify-center rounded-md bg-gold px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-gold-light hover:scale-105"
+            >
+              Book Appointment
+            </Link>
+          </motion.div>
+        </div>
 
         <motion.div
           custom={4}
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="mt-12 flex justify-center"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/60"
         >
-          <div className="h-px bg-gold animate-grow-width" />
+          <ChevronDown className="h-5 w-5 animate-chevron-bounce" />
         </motion.div>
-      </div>
+      </section>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gold animate-chevron-bounce">
-        <ChevronDown className="h-7 w-7" />
-      </div>
-    </section>
+      {/* MOBILE — video with overlay, same as desktop but sized for mobile */}
+      <section className="sm:hidden relative h-[100svh] w-full overflow-hidden flex items-center justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={IMAGES.reception01}
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 text-center px-5">
+          <span className="font-accent text-[11px] text-gold tracking-wider uppercase">
+            Anantapur's Premier Salon
+          </span>
+          <h1 className="mt-4 font-display text-4xl font-semibold text-white leading-[1.1]">
+            Where <em className="text-gold not-italic italic">Style</em> Meets Confidence
+          </h1>
+          <p className="mt-3 text-white/70 text-sm max-w-xs mx-auto leading-relaxed">
+            Fashion-forward cuts, color &amp; care for men and women.
+          </p>
+          <div className="mt-7">
+            <Link
+              to="/book"
+              className="inline-flex items-center justify-center rounded-md bg-gold px-7 py-3 text-sm font-medium text-white"
+            >
+              Book Appointment
+            </Link>
+          </div>
+        </div>
+
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white/50">
+          <ChevronDown className="h-5 w-5 animate-chevron-bounce" />
+        </div>
+      </section>
+    </>
   );
 }
-
-

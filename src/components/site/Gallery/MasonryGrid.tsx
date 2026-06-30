@@ -21,17 +21,18 @@ export function MasonryGrid({ items, onOpen }: Props) {
             loading="lazy"
             className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-black-deep/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 text-left">
             <span className="font-accent text-[10px] text-gold tracking-wider uppercase">
               {item.category}
             </span>
-            <p className="font-display text-sm text-off-white mt-1">{item.alt}</p>
+            <p className="font-display text-sm text-ink mt-1">{item.alt}</p>
           </div>
         </button>
       ))}
     </div>
   );
 }
+
 
 

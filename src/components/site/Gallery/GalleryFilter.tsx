@@ -19,7 +19,7 @@ export function GalleryFilter({ active, onChange }: Props) {
           className={`px-5 py-2 rounded-sm border text-sm font-accent tracking-wider uppercase transition-all ${
             active === t
               ? "bg-gold text-black-deep border-gold"
-              : "border-gold/30 text-off-white hover:border-gold hover:text-gold"
+              : "border-gold/30 text-ink hover:border-gold hover:text-gold"
           }`}
         >
           {t}
@@ -30,5 +30,6 @@ export function GalleryFilter({ active, onChange }: Props) {
 }
 
 export type { Category };
+
 
 

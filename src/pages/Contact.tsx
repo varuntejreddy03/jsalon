@@ -30,33 +30,33 @@ export function ContactPage() {
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">
           <Reveal>
-            <div className="bg-charcoal border border-gold/20 rounded-sm p-8 md:p-10 h-full">
-              <h2 className="font-display text-3xl text-off-white">Visit Us</h2>
+            <div className="bg-cream border border-hairline-strong rounded-sm p-8 md:p-10 h-full">
+              <h2 className="font-display text-3xl text-ink">Visit Us</h2>
               <div className="mt-2 h-px w-16 bg-gold" />
               <ul className="mt-8 space-y-6 text-sm">
                 <li className="flex gap-4">
                   <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
                     <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Address</div>
-                    <p className="mt-1 text-off-white leading-relaxed">{ADDRESS_LINE}</p>
+                    <p className="mt-1 text-ink leading-relaxed">{ADDRESS_LINE}</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <Phone className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
                     <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Phone</div>
-                    <a href={PHONE_HREF} className="mt-1 inline-block text-off-white text-lg hover:text-gold transition-colors">{PHONE}</a>
+                    <a href={PHONE_HREF} className="mt-1 inline-block text-ink text-lg hover:text-gold transition-colors">{PHONE}</a>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <Clock className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
                     <div className="font-accent text-[11px] text-gold tracking-wider uppercase">Hours</div>
-                    <p className="mt-1 text-off-white">{HOURS}</p>
+                    <p className="mt-1 text-ink">{HOURS}</p>
                   </div>
                 </li>
               </ul>
-              <div className="mt-10 pt-6 border-t border-gold/15 flex items-center gap-5">
+              <div className="mt-10 pt-6 border-t border-hairline-strong flex items-center gap-5">
                 <a href="https://instagram.com/jsalonunisex" target="_blank" rel="noreferrer" className="text-gold hover:scale-110 transition-transform"><Instagram className="h-5 w-5" /></a>
                 <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-gold hover:scale-110 transition-transform"><Facebook className="h-5 w-5" /></a>
                 <a href="mailto:hello@jsalonunisex.com" className="text-gold hover:scale-110 transition-transform"><Mail className="h-5 w-5" /></a>
@@ -67,9 +67,9 @@ export function ContactPage() {
           <Reveal delay={0.1}>
             <div className="relative h-full min-h-[420px] rounded-sm overflow-hidden border border-gold/30">
               {!mapLoaded ? (
-                <button onClick={() => setMapLoaded(true)} className="absolute inset-0 flex flex-col items-center justify-center bg-charcoal hover:bg-black-deep transition-colors">
+                <button onClick={() => setMapLoaded(true)} className="absolute inset-0 flex flex-col items-center justify-center bg-cream hover:bg-white transition-colors">
                   <MapPin className="h-12 w-12 text-gold" />
-                  <span className="mt-4 font-display text-2xl text-off-white">View Map</span>
+                  <span className="mt-4 font-display text-2xl text-ink">View Map</span>
                   <span className="mt-1 text-xs text-gray-muted font-accent tracking-wider uppercase">Click to load</span>
                 </button>
               ) : (
@@ -80,22 +80,22 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-charcoal py-20 px-6 border-y border-gold/15">
+      <section className="bg-cream py-20 px-6 border-y border-hairline-strong">
         <div className="max-w-3xl mx-auto">
           <Reveal className="text-center mb-10">
-            <h2 className="font-display text-3xl md:text-4xl text-off-white">Send Us a Message</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-ink">Send Us a Message</h2>
           </Reveal>
           <Reveal>
-            <form onSubmit={onSubmit} className="bg-black-deep border border-gold/20 rounded-sm p-7 md:p-10 grid gap-5">
+            <form onSubmit={onSubmit} className="bg-white border border-hairline-strong rounded-sm p-7 md:p-10 grid gap-5">
               <div className="grid md:grid-cols-2 gap-5">
-                <input name="name" required placeholder="Your name" className="bg-charcoal border border-gold/25 rounded-sm px-4 py-3 text-off-white text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold" />
-                <input name="phone" type="tel" required placeholder="Phone number" className="bg-charcoal border border-gold/25 rounded-sm px-4 py-3 text-off-white text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold" />
+                <input name="name" required placeholder="Your name" className="bg-cream border border-hairline-strong rounded-sm px-4 py-3 text-ink text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold" />
+                <input name="phone" type="tel" required placeholder="Phone number" className="bg-cream border border-hairline-strong rounded-sm px-4 py-3 text-ink text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold" />
               </div>
-              <select name="service" defaultValue="" className="bg-charcoal border border-gold/25 rounded-sm px-4 py-3 text-off-white text-sm focus:outline-none focus:border-gold">
+              <select name="service" defaultValue="" className="bg-cream border border-hairline-strong rounded-sm px-4 py-3 text-ink text-sm focus:outline-none focus:border-gold">
                 <option value="" disabled>I'm interested in...</option>
                 {SERVICES.map((s) => (<option key={s.slug}>{s.title}</option>))}
               </select>
-              <textarea name="message" required rows={5} placeholder="Your message..." className="bg-charcoal border border-gold/25 rounded-sm px-4 py-3 text-off-white text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold resize-none" />
+              <textarea name="message" required rows={5} placeholder="Your message..." className="bg-cream border border-hairline-strong rounded-sm px-4 py-3 text-ink text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold resize-none" />
               <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-6 py-3 text-base font-medium text-black-deep hover:bg-gold-light transition-all">
                 <Send className="h-4 w-4" /> Send Message
               </button>
@@ -109,5 +109,6 @@ export function ContactPage() {
     </>
   );
 }
+
 
 

@@ -18,7 +18,7 @@ export function ServicesPage() {
 
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <Reveal className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-off-white/85 text-lg leading-relaxed">
+          <p className="text-ink/85 text-lg leading-relaxed">
             Every treatment at J Salon uses fashion-forward technique, premium products and
             attention to your individual style.
           </p>
@@ -26,11 +26,11 @@ export function ServicesPage() {
         <ServicesGrid expanded />
       </section>
 
-      <section className="bg-charcoal py-20 px-6 border-y border-gold/15">
+      <section className="bg-cream py-20 px-6 border-y border-hairline-strong">
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-12">
             <SectionLabel>Also Available</SectionLabel>
-            <h2 className="mt-3 font-display text-3xl md:text-4xl text-off-white">
+            <h2 className="mt-3 font-display text-3xl md:text-4xl text-ink">
               Additional Treatments
             </h2>
           </Reveal>
@@ -39,10 +39,10 @@ export function ServicesPage() {
               {ADDITIONAL_SERVICES.map((s) => (
                 <div
                   key={s}
-                  className="flex items-center gap-3 bg-black-deep border border-gold/15 rounded-sm px-4 py-3 hover:border-gold/40 transition-colors"
+                  className="flex items-center gap-3 bg-white border border-hairline-strong rounded-sm px-4 py-3 hover:border-gold/40 transition-colors"
                 >
                   <Check className="h-4 w-4 text-gold shrink-0" />
-                  <span className="text-sm text-off-white font-body">{s}</span>
+                  <span className="text-sm text-ink font-body">{s}</span>
                 </div>
               ))}
             </div>
@@ -57,5 +57,6 @@ export function ServicesPage() {
     </>
   );
 }
+
 
 

@@ -38,7 +38,7 @@ export function BookingForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="bg-charcoal border border-gold/20 rounded-sm p-7 md:p-10 grid gap-5"
+      className="bg-cream border border-hairline-strong rounded-sm p-7 md:p-10 grid gap-5"
     >
       <div className="grid md:grid-cols-2 gap-5">
         <Field label="Your Name" name="name" required placeholder="Jane Doe" />
@@ -53,7 +53,7 @@ export function BookingForm() {
             name="service"
             required
             defaultValue=""
-            className="mt-2 w-full bg-black-deep border border-gold/25 rounded-sm px-4 py-3 text-off-white font-body text-sm focus:outline-none focus:border-gold"
+            className="mt-2 w-full bg-white border border-hairline-strong rounded-sm px-4 py-3 text-ink font-body text-sm focus:outline-none focus:border-gold"
           >
             <option value="" disabled>
               Choose a service
@@ -72,7 +72,7 @@ export function BookingForm() {
             name="time"
             required
             defaultValue=""
-            className="mt-2 w-full bg-black-deep border border-gold/25 rounded-sm px-4 py-3 text-off-white font-body text-sm focus:outline-none focus:border-gold"
+            className="mt-2 w-full bg-white border border-hairline-strong rounded-sm px-4 py-3 text-ink font-body text-sm focus:outline-none focus:border-gold"
           >
             <option value="" disabled>
               Pick a time slot
@@ -94,7 +94,7 @@ export function BookingForm() {
               type="button"
               variant="outline"
               className={cn(
-                "mt-2 w-full justify-start bg-black-deep border-gold/25 rounded-sm px-4 py-3 h-auto text-left font-normal text-off-white hover:bg-black-deep hover:border-gold hover:text-gold",
+                "mt-2 w-full justify-start bg-white border-hairline-strong rounded-sm px-4 py-3 h-auto text-left font-normal text-ink hover:bg-white hover:border-gold hover:text-gold",
                 !date && "text-gray-muted"
               )}
             >
@@ -102,7 +102,7 @@ export function BookingForm() {
               {date ? format(date, "PPP") : "Choose a date"}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto p-0 bg-charcoal border-gold/30">
+          <PopoverContent className="w-auto p-0 bg-cream border-gold/30">
             <Calendar
               mode="single"
               selected={date}
@@ -120,13 +120,13 @@ export function BookingForm() {
           name="notes"
           rows={4}
           placeholder="Any special requests, references, or questions..."
-          className="mt-2 w-full bg-black-deep border border-gold/25 rounded-sm px-4 py-3 text-off-white font-body text-sm focus:outline-none focus:border-gold resize-none"
+          className="mt-2 w-full bg-white border border-hairline-strong rounded-sm px-4 py-3 text-ink font-body text-sm focus:outline-none focus:border-gold resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="mt-2 inline-flex items-center justify-center rounded-sm bg-gold px-7 py-3.5 text-base font-medium text-black-deep hover:bg-gold-light transition-all hover:shadow-gold"
+        className="mt-2 inline-flex items-center justify-center rounded-sm bg-gold px-7 py-3.5 text-base font-medium text-black-deep hover:bg-gold-light transition-all hover:shadow-soft"
       >
         Request Appointment
       </button>
@@ -169,10 +169,11 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full bg-black-deep border border-gold/25 rounded-sm px-4 py-3 text-off-white font-body text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold"
+        className="mt-2 w-full bg-white border border-hairline-strong rounded-sm px-4 py-3 text-ink font-body text-sm placeholder:text-gray-muted focus:outline-none focus:border-gold"
       />
     </div>
   );
 }
+
 
 

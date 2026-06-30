@@ -4,10 +4,10 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-black-deep border-t border-gold/20 mt-0">
+    <footer className="bg-surface border-t border-hairline-strong mt-0">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
         <div>
-          <Logo size={88} />
+          <Logo size={60} />
           <p className="mt-5 font-accent italic text-gold text-sm tracking-wider">
             COMFORTABLY STYLISH
           </p>
@@ -17,7 +17,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-accent text-gold text-xs tracking-wider mb-5">EXPLORE</h3>
+          <h3 className="font-accent text-gold text-xs tracking-wider mb-5 uppercase">EXPLORE</h3>
           <ul className="space-y-2.5 text-sm font-body">
             {[
               { to: "/", label: "Home" },
@@ -31,7 +31,7 @@ export function Footer() {
               <li key={l.to}>
                 <Link
                   to={l.to}
-                  className="text-off-white hover:text-gold transition-colors inline-block"
+                  className="text-ink/70 hover:text-gold transition-colors inline-block"
                 >
                   {l.label}
                 </Link>
@@ -41,8 +41,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-accent text-gold text-xs tracking-wider mb-5">VISIT US</h3>
-          <ul className="space-y-3 text-sm text-off-white">
+          <h3 className="font-accent text-gold text-xs tracking-wider mb-5 uppercase">VISIT US</h3>
+          <ul className="space-y-3 text-sm text-ink/80">
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" />
               <span className="text-gray-muted">
@@ -83,10 +83,10 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gold/15">
+      <div className="border-t border-hairline-strong">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-muted font-body">
-            © {new Date().getFullYear()} J Salon Unisex. All rights reserved.
+            &copy; {new Date().getFullYear()} J Salon Unisex. All rights reserved.
           </p>
           <p className="text-xs text-gray-muted font-body">Anantapur, Andhra Pradesh</p>
         </div>
@@ -94,5 +94,3 @@ export function Footer() {
     </footer>
   );
 }
-
-

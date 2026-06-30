@@ -36,11 +36,12 @@ export function StatPillar({ value, suffix = "", label, decimals = 0 }: Props) {
         {display}
         <span className="text-gold-light">{suffix}</span>
       </div>
-      <div className="mt-3 font-accent text-xs text-off-white/80 tracking-wider uppercase">
+      <div className="mt-3 font-accent text-xs text-ink/80 tracking-wider uppercase">
         {label}
       </div>
     </div>
   );
 }
+
 
 

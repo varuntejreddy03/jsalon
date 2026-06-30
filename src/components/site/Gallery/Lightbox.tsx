@@ -34,13 +34,13 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] bg-black-deep/95 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[60] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={onClose}
         >
           <button
             aria-label="Close"
             onClick={onClose}
-            className="absolute top-5 right-5 text-off-white hover:text-gold p-2"
+            className="absolute top-5 right-5 text-ink hover:text-gold p-2"
           >
             <X className="h-6 w-6" />
           </button>
@@ -50,7 +50,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-3 md:left-8 text-off-white hover:text-gold p-2"
+            className="absolute left-3 md:left-8 text-ink hover:text-gold p-2"
           >
             <ChevronLeft className="h-8 w-8" />
           </button>
@@ -60,7 +60,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-3 md:right-8 text-off-white hover:text-gold p-2"
+            className="absolute right-3 md:right-8 text-ink hover:text-gold p-2"
           >
             <ChevronRight className="h-8 w-8" />
           </button>
@@ -72,7 +72,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
             src={items[index].src}
             alt={items[index].alt}
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[88vh] max-w-[92vw] object-contain rounded-sm border border-gold/30 shadow-gold-lg"
+            className="max-h-[88vh] max-w-[92vw] object-contain rounded-sm border border-gold/30 shadow-soft-lg"
           />
           <div className="absolute bottom-6 left-0 right-0 text-center text-gold font-accent text-xs tracking-wider">
             {items[index].category} — {items[index].alt}
@@ -82,5 +82,6 @@ export function Lightbox({ items, index, onClose, onPrev, onNext }: Props) {
     </AnimatePresence>
   );
 }
+
 
 

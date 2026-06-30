@@ -1,8 +1,7 @@
-import { Scissors, Palette, Sparkles, Hand, Heart, Droplets } from "lucide-react";
+import { Scissors, Paintbrush, Sparkles, Hand, Heart, Droplets } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 // Image imports (WebP interiors)
-import logoSignage from "@/assets/jsalon-logo-signage-01.webp";
 import reception01 from "@/assets/jsalon-reception-01.webp";
 import reception02 from "@/assets/jsalon-reception-02.webp";
 import pedicure01 from "@/assets/jsalon-pedicure-01.webp";
@@ -19,7 +18,6 @@ import portraitWall01 from "@/assets/jsalon-portrait-wall-01.webp";
 import nailBar01 from "@/assets/jsalon-nail-bar-01.webp";
 
 export const IMAGES = {
-  logoSignage,
   reception01,
   reception02,
   pedicure01,
@@ -41,7 +39,6 @@ export type Service = {
   title: string;
   short: string;
   long: string;
-  price: string;
   icon: LucideIcon;
 };
 
@@ -51,7 +48,6 @@ export const SERVICES: Service[] = [
     title: "Hair Cutting & Styling",
     short: "Precision cuts and styling that match your face shape and personality.",
     long: "From classic to fashion-forward — our stylists deliver cuts that fit your face, hair type, and lifestyle. Includes wash, cut, blow-dry and finish.",
-    price: "From ₹200",
     icon: Scissors,
   },
   {
@@ -59,15 +55,13 @@ export const SERVICES: Service[] = [
     title: "Hair Color & Highlights",
     short: "Global color, balayage, ombré and statement highlights.",
     long: "Premium ammonia-friendly colors and expert highlighting. Whether you want a subtle gloss or a bold transformation, our colorists deliver salon-quality results.",
-    price: "From ₹1,200",
-    icon: Palette,
+    icon: Paintbrush,
   },
   {
     slug: "skincare-treatments",
     title: "Skincare Treatments",
     short: "Facials, cleanups and treatments using miraculous products.",
     long: "Deep cleansing facials, brightening treatments, anti-acne and hydration therapies. Our skin range is dermatologically tested and result-oriented.",
-    price: "From ₹500",
     icon: Sparkles,
   },
   {
@@ -75,7 +69,6 @@ export const SERVICES: Service[] = [
     title: "Nail Care",
     short: "Manicures, pedicures and nail art with non-toxic products.",
     long: "Classic manicures, gel polish, French tips and creative nail art — all using non-toxic, breathable formulas safe for regular wear.",
-    price: "From ₹300",
     icon: Hand,
   },
   {
@@ -83,7 +76,6 @@ export const SERVICES: Service[] = [
     title: "Bridal & Party Makeup",
     short: "Picture-perfect makeup for your biggest moments.",
     long: "Engagement, wedding day, reception and party looks — full bridal packages with trial sessions, draping, hairstyling and HD makeup that lasts all day.",
-    price: "From ₹2,500",
     icon: Heart,
   },
   {
@@ -91,7 +83,6 @@ export const SERVICES: Service[] = [
     title: "Hair Spa & Keratin",
     short: "Deep nourishment, smoothening and frizz-control treatments.",
     long: "Hair spa rituals, keratin smoothening, botox treatments and scalp therapies that restore shine, strength and manageability.",
-    price: "From ₹800",
     icon: Droplets,
   },
 ];

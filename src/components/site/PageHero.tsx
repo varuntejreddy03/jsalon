@@ -22,27 +22,27 @@ export function PageHero({
 }: Props) {
   return (
     <section
-      className={`relative ${minHeight} flex items-center justify-center pt-32 pb-16 px-6 overflow-hidden border-b border-gold/15`}
+      className={`relative ${minHeight} flex items-center justify-center pt-32 pb-16 px-6 overflow-hidden border-b border-hairline-strong`}
     >
       {image ? (
         <>
           <img src={image} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black-deep/70" />
+          <div className="absolute inset-0 bg-white/55" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-black-deep to-black-deep" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream via-white to-white" />
       )}
       <div
         aria-hidden
-        className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/10 blur-3xl"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/5 blur-3xl"
       />
       <div className="relative max-w-4xl mx-auto text-center">
         {eyebrow && <SectionLabel className="mb-4">{eyebrow}</SectionLabel>}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-off-white text-balance leading-tight">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-ink text-balance leading-tight">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-5 text-off-white/75 text-lg max-w-2xl mx-auto font-body">{subtitle}</p>
+          <p className="mt-5 text-gray-muted text-lg max-w-2xl mx-auto font-body">{subtitle}</p>
         )}
         {breadcrumbs && (
           <nav className="mt-8 flex justify-center items-center gap-2 text-xs font-accent text-gray-muted tracking-wider uppercase">
@@ -65,5 +65,3 @@ export function PageHero({
     </section>
   );
 }
-
-

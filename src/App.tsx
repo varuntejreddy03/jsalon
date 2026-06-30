@@ -22,7 +22,7 @@ export function App() {
   return (
     <>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-black-deep">
+      <div className="min-h-screen flex flex-col bg-white">
         <Navbar />
         <main className="flex-1">
           <Routes>

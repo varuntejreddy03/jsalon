@@ -22,10 +22,10 @@ export function AboutPage() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <SectionLabel>The Story</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl text-off-white">
+            <h2 className="mt-3 font-display text-4xl text-ink">
               Born in Anantapur. Built on Craft.
             </h2>
-            <p className="mt-6 text-off-white/80 leading-relaxed">
+            <p className="mt-6 text-ink/80 leading-relaxed">
               J Salon Unisex was founded with one simple promise — to make great salon experiences
               affordable for everyone.
             </p>
@@ -44,7 +44,7 @@ export function AboutPage() {
             />
             <div className="relative">
               <div className="absolute inset-0 -m-12 rounded-full border border-gold/30 animate-rotate-slow" />
-              <div className="absolute inset-0 rounded-full bg-gold/15 blur-3xl" />
+              <div className="absolute inset-0 rounded-full bg-gold/8 blur-3xl" />
               <LettermarkJ size={280} className="relative" />
             </div>
           </Reveal>
@@ -55,7 +55,7 @@ export function AboutPage() {
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
           <SectionLabel>Our Space</SectionLabel>
-          <h2 className="mt-3 font-display text-4xl text-off-white">Step Inside</h2>
+          <h2 className="mt-3 font-display text-4xl text-ink">Step Inside</h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-4">
           {[IMAGES.reception01, IMAGES.hairStation01, IMAGES.facialRoom01].map((src, i) => (
@@ -69,11 +69,11 @@ export function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="bg-charcoal py-24 px-6 border-y border-gold/15">
+      <section className="bg-cream py-24 px-6 border-y border-hairline-strong">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <SectionLabel>Our Philosophy</SectionLabel>
-            <h2 className="mt-3 font-display text-4xl text-off-white">
+            <h2 className="mt-3 font-display text-4xl text-ink">
               Three Things We Stand For
             </h2>
           </Reveal>
@@ -84,11 +84,11 @@ export function AboutPage() {
               { icon: Award, title: "Professional", desc: "Trained stylists, hygienic stations and consistency." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 0.1}>
-                <div className="bg-black-deep border border-gold/20 rounded-sm p-8 h-full text-center hover:border-gold/50 transition-all">
+                <div className="bg-white border border-hairline-strong rounded-sm p-8 h-full text-center hover:border-gold/50 transition-all">
                   <div className="mx-auto h-14 w-14 rounded-sm border border-gold/40 flex items-center justify-center text-gold">
                     <p.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="mt-5 font-display text-2xl text-off-white">{p.title}</h3>
+                  <h3 className="mt-5 font-display text-2xl text-ink">{p.title}</h3>
                   <p className="mt-3 text-sm text-gray-muted leading-relaxed">{p.desc}</p>
                 </div>
               </Reveal>
@@ -98,7 +98,7 @@ export function AboutPage() {
       </section>
 
       {/* Numbers */}
-      <section className="bg-charcoal py-20 px-6 border-b border-gold/15">
+      <section className="bg-cream py-20 px-6 border-b border-hairline-strong">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {STATS.map((s) => (
             <StatPillar key={s.label} {...s} />
@@ -110,5 +110,6 @@ export function AboutPage() {
     </>
   );
 }
+
 
 

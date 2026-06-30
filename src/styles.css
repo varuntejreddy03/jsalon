@@ -6,18 +6,17 @@
   --color-gold: #b8860b;
   --color-gold-light: #d4a843;
   --color-gold-shine: #f5d080;
-  --color-black-deep: #000000;
-  --color-charcoal: #0a0a0c;
-  --color-surface: #101012;
-  --color-off-white: #fcfdff;
-  --color-gray-muted: #a1a4a5;
-  --color-hairline: rgba(255, 255, 255, 0.06);
-  --color-hairline-strong: rgba(255, 255, 255, 0.14);
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-accent: "Inter", system-ui, sans-serif;
-  --shadow-gold-glow: 0 0 20px rgba(184, 134, 11, 0.25);
-  --shadow-gold-glow-lg: 0 0 40px rgba(184, 134, 11, 0.4);
+  --color-white: #ffffff;
+  --color-cream: #faf7f2;
+  --color-surface: #f5f0e8;
+  --color-ink: #1a1a1a;
+  --color-gray-muted: #6b6b6b;
+  --color-hairline: rgba(0, 0, 0, 0.06);
+  --color-hairline-strong: rgba(0, 0, 0, 0.12);
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-body: "Inter Tight", "Inter", system-ui, sans-serif;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-soft-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -47,24 +46,24 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #000000;
-  --foreground: #fcfdff;
-  --card: #0a0a0c;
-  --card-foreground: #fcfdff;
-  --popover: #0a0a0c;
-  --popover-foreground: #fcfdff;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #faf7f2;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
   --primary: #b8860b;
-  --primary-foreground: #000000;
-  --secondary: #101012;
-  --secondary-foreground: #fcfdff;
-  --muted: #101012;
-  --muted-foreground: #a1a4a5;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f0e8;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f5f0e8;
+  --muted-foreground: #6b6b6b;
   --accent: #b8860b;
-  --accent-foreground: #000000;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #fcfdff;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.12);
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.14);
   --ring: #b8860b;
 }
 
@@ -89,13 +88,13 @@
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 20px rgba(184, 134, 11, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(184, 134, 11, 0.6); }
+  0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
+  50% { box-shadow: 0 4px 16px rgba(184, 134, 11, 0.15); }
 }
 
 @keyframes orb-pulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.1); }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
 }
 
 @keyframes chevron-bounce {
@@ -133,6 +132,7 @@
 @utility font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+  font-optical-sizing: auto;
 }
 @utility font-body {
   font-family: var(--font-body);
@@ -141,14 +141,14 @@
 @utility font-accent {
   font-family: var(--font-body);
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
-@utility shadow-gold {
-  box-shadow: var(--shadow-gold-glow);
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
 }
-@utility shadow-gold-lg {
-  box-shadow: var(--shadow-gold-glow-lg);
+@utility shadow-soft-lg {
+  box-shadow: var(--shadow-soft-lg);
 }
 
 @utility text-balance {
@@ -160,25 +160,27 @@
     border-color: var(--border);
   }
   html, body {
-    background-color: #000000;
-    color: #fcfdff;
+    background-color: #ffffff;
+    color: #1a1a1a;
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    line-height: 1.1;
+    line-height: 1.05;
     letter-spacing: -0.02em;
+    color: #1a1a1a;
+    font-optical-sizing: auto;
   }
   h1 { font-weight: 600; }
   h2 { font-weight: 600; }
   h3 { font-weight: 500; }
   ::selection {
     background-color: #b8860b;
-    color: #000000;
+    color: #ffffff;
   }
 }
 

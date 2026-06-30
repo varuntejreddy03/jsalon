@@ -21,14 +21,14 @@ export function ReviewsPage() {
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
         <Reveal>
-          <div className="bg-charcoal border border-gold/25 rounded-sm p-10 text-center">
+          <div className="bg-cream border border-hairline-strong rounded-sm p-10 text-center">
             <div className="flex justify-center gap-1 text-gold mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-6 w-6 fill-gold" />
               ))}
             </div>
             <div className="font-display text-6xl md:text-7xl text-gold font-semibold">4.9</div>
-            <p className="mt-3 text-off-white font-body">
+            <p className="mt-3 text-ink font-body">
               Based on <span className="text-gold font-semibold">1,168+</span> Google Reviews
             </p>
             <a
@@ -64,5 +64,6 @@ export function ReviewsPage() {
     </>
   );
 }
+
 
 

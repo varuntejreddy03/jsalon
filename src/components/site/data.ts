@@ -193,7 +193,6 @@ export type GalleryItem = {
 
 export const GALLERY: GalleryItem[] = [
   // Real interior shots
-  { src: logoSignage, alt: "Gold J SALON wall logo under chandelier", category: "Interior" },
   { src: reception01, alt: "Reception desk with green sofa", category: "Interior" },
   { src: reception02, alt: "Reception alternate angle", category: "Interior" },
   { src: pedicure01, alt: "Twin pedicure chairs", category: "Interior" },

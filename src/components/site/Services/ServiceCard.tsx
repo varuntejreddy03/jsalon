@@ -11,7 +11,7 @@ export function ServiceCard({ service, expanded = false, image }: Props) {
     <motion.article
       whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.08)" }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="group relative bg-cream border border-hairline-strong rounded-lg overflow-hidden flex flex-col shadow-soft"
+      className="group relative bg-white border border-hairline-strong rounded-lg overflow-hidden flex flex-col shadow-soft"
     >
       {image && (
         <div className="relative h-48 overflow-hidden">

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Instagram } from "lucide-react";
+import { Instagram, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PageHero } from "@/components/site/PageHero";
@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const GALLERY_IMAGES = [
   { src: IMAGES.reception01, alt: "Reception & Lounge" },
-  { src: IMAGES.reception02, alt: "Reception Area" },
   { src: IMAGES.hairStation01, alt: "Hair Styling Station" },
-  { src: IMAGES.barberChair01, alt: "Barber Chair" },
   { src: IMAGES.facialRoom01, alt: "Facial Treatment Room" },
-  { src: IMAGES.facialRoom02, alt: "Skincare Suite" },
-  { src: IMAGES.facialRoom03, alt: "Treatment Chair" },
-  { src: IMAGES.pedicure01, alt: "Pedicure Lounge" },
-  { src: IMAGES.pedicure02, alt: "Pedicure Station" },
-  { src: IMAGES.pedicure03, alt: "Nail Care Area" },
+  { src: IMAGES.barberChair01, alt: "Barber Chair" },
   { src: IMAGES.nailBar01, alt: "Nail Bar" },
+  { src: IMAGES.pedicure01, alt: "Pedicure Lounge" },
   { src: IMAGES.stylingRow01, alt: "Styling Mirrors" },
+  { src: IMAGES.facialRoom02, alt: "Skincare Suite" },
+  { src: IMAGES.reception02, alt: "Reception Area" },
+  { src: IMAGES.pedicure02, alt: "Pedicure Station" },
+  { src: IMAGES.facialRoom03, alt: "Treatment Chair" },
   { src: IMAGES.stylingRow02, alt: "Styling Stations" },
+  { src: IMAGES.pedicure03, alt: "Nail Care Area" },
   { src: IMAGES.portraitWall01, alt: "Portrait Gallery" },
 ];
 
@@ -33,39 +33,28 @@ export function GalleryPage() {
     const ctx = gsap.context(() => {
       const items = gridRef.current?.querySelectorAll(".gallery-item");
       if (!items) return;
-
-      items.forEach((item, i) => {
-        const direction = i % 3 === 0 ? -1 : i % 3 === 2 ? 1 : 0;
-
-        gsap.fromTo(
-          item,
-          {
-            opacity: 0,
-            y: 60,
-            x: direction * 30,
-            scale: 0.92,
-            rotateZ: direction * 2,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            x: 0,
-            scale: 1,
-            rotateZ: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 88%",
-              toggleActions: "play none none none",
-            },
-          }
+      items.forEach((item) => {
+        gsap.fromTo(item,
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out",
+            scrollTrigger: { trigger: item, start: "top 90%" } }
         );
       });
     }, gridRef);
-
     return () => ctx.revert();
   }, []);
+
+  // Keyboard nav for lightbox
+  useEffect(() => {
+    if (selected === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+      if (e.key === "ArrowRight") setSelected((selected + 1) % GALLERY_IMAGES.length);
+      if (e.key === "ArrowLeft") setSelected((selected - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [selected]);
 
   return (
     <>
@@ -77,33 +66,26 @@ export function GalleryPage() {
         image={IMAGES.stylingRow01}
       />
 
-      {/* Gallery Grid */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
+          className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
         >
           {GALLERY_IMAGES.map((img, i) => (
             <div
               key={i}
-              className={`gallery-item relative overflow-hidden rounded-xl cursor-pointer group ${
-                i === 0 || i === 7
-                  ? "sm:col-span-2 lg:col-span-2 aspect-[2/1]"
-                  : "aspect-[4/3]"
-              }`}
+              className="gallery-item break-inside-avoid relative overflow-hidden rounded-xl cursor-pointer group"
               onClick={() => setSelected(i)}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-auto block rounded-xl transition-transform duration-700 group-hover:scale-105"
               />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-end">
-                <div className="p-4 sm:p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-white text-sm font-medium">{img.alt}</span>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <span className="text-white text-sm font-medium">{img.alt}</span>
               </div>
             </div>
           ))}
@@ -113,32 +95,29 @@ export function GalleryPage() {
       {/* Lightbox */}
       {selected !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 sm:p-10"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 sm:p-10"
           onClick={() => setSelected(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl z-50"
+            className="absolute top-5 right-5 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-50"
             onClick={() => setSelected(null)}
+            aria-label="Close"
           >
-            &times;
+            <X className="h-5 w-5 text-white" />
           </button>
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-50"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelected((selected - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
-            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-50"
+            onClick={(e) => { e.stopPropagation(); setSelected((selected - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length); }}
+            aria-label="Previous"
           >
-            &#8249;
+            <ChevronLeft className="h-5 w-5 text-white" />
           </button>
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-50"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelected((selected + 1) % GALLERY_IMAGES.length);
-            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-50"
+            onClick={(e) => { e.stopPropagation(); setSelected((selected + 1) % GALLERY_IMAGES.length); }}
+            aria-label="Next"
           >
-            &#8250;
+            <ChevronRight className="h-5 w-5 text-white" />
           </button>
           <img
             src={GALLERY_IMAGES[selected].src}
@@ -146,7 +125,7 @@ export function GalleryPage() {
             className="max-w-full max-h-[85vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm">
             {GALLERY_IMAGES[selected].alt} &middot; {selected + 1}/{GALLERY_IMAGES.length}
           </div>
         </div>

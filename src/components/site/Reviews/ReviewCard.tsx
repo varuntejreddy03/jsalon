@@ -3,7 +3,7 @@ import type { Review } from "../data";
 
 export function ReviewCard({ review }: { review: Review }) {
   return (
-    <div className="bg-cream border border-hairline-strong rounded-lg p-6 h-full flex flex-col shadow-soft">
+    <div className="bg-white border border-hairline-strong rounded-lg p-6 h-full flex flex-col shadow-soft">
       <div className="flex gap-1 text-gold">
         {Array.from({ length: review.stars }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-gold" />

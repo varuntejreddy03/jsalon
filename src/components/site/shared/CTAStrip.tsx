@@ -17,7 +17,7 @@ export function CTAStrip({
       {bgImage && (
         <>
           <img src={bgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/55" />
+          <div className="absolute inset-0" style={{ background: "rgba(251,224,210,0.5)" }} />
         </>
       )}
       <div

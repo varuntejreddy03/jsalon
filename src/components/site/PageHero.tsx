@@ -27,10 +27,10 @@ export function PageHero({
       {image ? (
         <>
           <img src={image} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/55" />
+          <div className="absolute inset-0" style={{ background: "rgba(249,238,226,0.55)" }} />
         </>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-b from-cream via-white to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface via-cream to-cream" />
       )}
       <div
         aria-hidden

@@ -7,7 +7,7 @@ import { ReviewCard } from "@/components/site/Reviews/ReviewCard";
 import { CTAStrip } from "@/components/site/shared/CTAStrip";
 import { SectionLabel } from "@/components/site/shared/SectionLabel";
 import { ScrollReveal, StaggerChildren } from "@/components/site/shared/ScrollReveal";
-import { ScrollPinGallery } from "@/components/site/Gallery/ScrollPinGallery";
+import { ImageSlider } from "@/components/site/Gallery/ImageSlider";
 import { LettermarkJ } from "@/components/site/Logo";
 import { REVIEWS, STATS, IMAGES } from "@/components/site/data";
 
@@ -25,8 +25,8 @@ export function HomePage() {
     <>
       <VideoHero />
 
-      {/* SERVICES PREVIEW — white bg */}
-      <section className="relative py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-white">
+      {/* SERVICES PREVIEW — cream bg */}
+      <section className="relative py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-cream">
         <ScrollReveal animation="fade-up" className="text-center mb-14">
           <SectionLabel>Crafted for Men &amp; Women</SectionLabel>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-ink">
@@ -45,7 +45,7 @@ export function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* BRAND QUOTE — cream bg */}
+      {/* BRAND QUOTE */}
       <section className="bg-cream py-16 sm:py-24 px-6 border-y border-hairline">
         <ScrollReveal animation="scale" className="relative max-w-3xl mx-auto text-center">
           <Quote className="absolute -top-4 -left-2 md:-left-12 h-20 w-20 text-gold/20" />
@@ -58,8 +58,8 @@ export function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* STATS — surface bg */}
-      <section className="bg-surface py-14 sm:py-20 px-6 border-b border-hairline">
+      {/* STATS */}
+      <section className="bg-cream py-14 sm:py-20 px-6 border-b border-hairline">
         <StaggerChildren className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10" stagger={0.15}>
           {STATS.map((s) => (
             <div key={s.label}>
@@ -69,8 +69,8 @@ export function HomePage() {
         </StaggerChildren>
       </section>
 
-      {/* ABOUT TEASER — white bg */}
-      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-white">
+      {/* ABOUT TEASER — cream bg */}
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-cream">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <ScrollReveal animation="fade-left">
             <SectionLabel>About Us</SectionLabel>
@@ -109,30 +109,32 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* GALLERY — scroll-pinned 3D reveal, full viewport */}
-      <section className="bg-cream border-y border-hairline">
-        <ScrollReveal animation="fade-up" className="text-center pt-16 sm:pt-24 pb-8 px-6">
-          <SectionLabel>Our Space</SectionLabel>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-ink">
-            Step Inside J Salon
-          </h2>
-          <div className="mx-auto mt-5 h-px w-20 bg-gold" />
-        </ScrollReveal>
+      {/* GALLERY — auto-sliding */}
+      <section className="bg-cream py-16 sm:py-24 px-6 border-y border-hairline">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal animation="fade-up" className="text-center mb-10">
+            <SectionLabel>Our Space</SectionLabel>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-ink">
+              Step Inside J Salon
+            </h2>
+            <div className="mx-auto mt-5 h-px w-20 bg-gold" />
+          </ScrollReveal>
 
-        <ScrollPinGallery images={galleryImages} />
+          <ImageSlider images={galleryImages} />
 
-        <ScrollReveal animation="fade-up" className="text-center py-10 px-6">
-          <Link
-            to="/gallery"
-            className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
-          >
-            View Full Gallery <ArrowRight className="h-4 w-4" />
-          </Link>
-        </ScrollReveal>
+          <ScrollReveal animation="fade-up" className="text-center mt-10">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 text-gold font-accent text-sm tracking-wider uppercase border-b border-gold/40 pb-1 hover:gap-3 transition-all"
+            >
+              View Full Gallery <ArrowRight className="h-4 w-4" />
+            </Link>
+          </ScrollReveal>
+        </div>
       </section>
 
-      {/* REVIEWS TEASER — white bg, cards stagger in */}
-      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-white">
+      {/* REVIEWS TEASER — cream bg */}
+      <section className="py-16 sm:py-24 px-6 max-w-7xl mx-auto bg-cream">
         <ScrollReveal animation="fade-up" className="text-center mb-14">
           <SectionLabel>1,168+ Five-Star Reviews</SectionLabel>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-ink">

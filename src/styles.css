@@ -7,16 +7,16 @@
   --color-gold-light: #d4a843;
   --color-gold-shine: #f5d080;
   --color-white: #ffffff;
-  --color-cream: #faf7f2;
-  --color-surface: #f5f0e8;
-  --color-ink: #1a1a1a;
-  --color-gray-muted: #6b6b6b;
-  --color-hairline: rgba(0, 0, 0, 0.06);
-  --color-hairline-strong: rgba(0, 0, 0, 0.12);
+  --color-cream: #F9EEE2;
+  --color-surface: #F9EEE2;
+  --color-ink: #2c1a0e;
+  --color-gray-muted: #7a6458;
+  --color-hairline: rgba(180, 120, 80, 0.08);
+  --color-hairline-strong: rgba(180, 120, 80, 0.15);
   --font-display: "Fraunces", "Playfair Display", Georgia, serif;
   --font-body: "Inter Tight", "Inter", system-ui, sans-serif;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-soft-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 2px 8px rgba(180, 120, 80, 0.08);
+  --shadow-soft-lg: 0 8px 24px rgba(180, 120, 80, 0.12);
 }
 
 @theme inline {
@@ -46,24 +46,24 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --card: #faf7f2;
-  --card-foreground: #1a1a1a;
+  --background: #F9EEE2;
+  --foreground: #2c1a0e;
+  --card: #ffffff;
+  --card-foreground: #2c1a0e;
   --popover: #ffffff;
-  --popover-foreground: #1a1a1a;
+  --popover-foreground: #2c1a0e;
   --primary: #b8860b;
   --primary-foreground: #ffffff;
-  --secondary: #f5f0e8;
-  --secondary-foreground: #1a1a1a;
-  --muted: #f5f0e8;
-  --muted-foreground: #6b6b6b;
+  --secondary: #F9EEE2;
+  --secondary-foreground: #2c1a0e;
+  --muted: #F9EEE2;
+  --muted-foreground: #7a6458;
   --accent: #b8860b;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
-  --input: rgba(0, 0, 0, 0.14);
+  --border: rgba(180, 120, 80, 0.15);
+  --input: rgba(180, 120, 80, 0.18);
   --ring: #b8860b;
 }
 
@@ -88,7 +88,7 @@
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
+  0%, 100% { box-shadow: 0 2px 8px rgba(180, 120, 80, 0.08); }
   50% { box-shadow: 0 4px 16px rgba(184, 134, 11, 0.15); }
 }
 
@@ -160,8 +160,8 @@
     border-color: var(--border);
   }
   html, body {
-    background-color: #ffffff;
-    color: #1a1a1a;
+    background-color: #F9EEE2;
+    color: #2c1a0e;
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
@@ -173,7 +173,7 @@
     font-family: var(--font-display);
     line-height: 1.05;
     letter-spacing: -0.02em;
-    color: #1a1a1a;
+    color: #2c1a0e;
     font-optical-sizing: auto;
   }
   h1 { font-weight: 600; }

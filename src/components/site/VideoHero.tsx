@@ -30,7 +30,7 @@ export function VideoHero() {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(249,238,226,0.45) 0%, rgba(249,238,226,0.25) 50%, rgba(249,238,226,0.55) 100%)" }} />
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
           <motion.div custom={0} initial="hidden" animate="show" variants={stagger}>
@@ -44,7 +44,7 @@ export function VideoHero() {
             initial="hidden"
             animate="show"
             variants={stagger}
-            className="mt-5 font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white text-balance leading-[1.1]"
+            className="mt-5 font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-ink text-balance leading-[1.1]"
           >
             Where <em className="text-gold not-italic italic">Style</em> Meets Confidence
           </motion.h1>
@@ -54,7 +54,7 @@ export function VideoHero() {
             initial="hidden"
             animate="show"
             variants={stagger}
-            className="mt-4 text-white/75 text-base md:text-lg max-w-lg mx-auto font-body leading-relaxed"
+            className="mt-4 text-ink/70 text-base md:text-lg max-w-lg mx-auto font-body leading-relaxed"
           >
             Fashion-forward cuts, color &amp; care for men and women.
           </motion.p>
@@ -74,7 +74,7 @@ export function VideoHero() {
           initial="hidden"
           animate="show"
           variants={stagger}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/60"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-gold"
         >
           <ChevronDown className="h-5 w-5 animate-chevron-bounce" />
         </motion.div>
@@ -92,16 +92,16 @@ export function VideoHero() {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(249,238,226,0.45) 0%, rgba(249,238,226,0.25) 50%, rgba(249,238,226,0.55) 100%)" }} />
 
         <div className="relative z-10 text-center px-5">
           <span className="font-accent text-[11px] text-gold tracking-wider uppercase">
             Anantapur's Premier Salon
           </span>
-          <h1 className="mt-4 font-display text-4xl font-semibold text-white leading-[1.1]">
+          <h1 className="mt-4 font-display text-4xl font-semibold text-ink leading-[1.1]">
             Where <em className="text-gold not-italic italic">Style</em> Meets Confidence
           </h1>
-          <p className="mt-3 text-white/70 text-sm max-w-xs mx-auto leading-relaxed">
+          <p className="mt-3 text-ink/70 text-sm max-w-xs mx-auto leading-relaxed">
             Fashion-forward cuts, color &amp; care for men and women.
           </p>
           <div className="mt-7">
@@ -114,7 +114,7 @@ export function VideoHero() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white/50">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-gold">
           <ChevronDown className="h-5 w-5 animate-chevron-bounce" />
         </div>
       </section>

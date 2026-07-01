@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -7,84 +7,72 @@ type Props = {
 };
 
 export function ImageSlider({ images }: Props) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const pausedRef = useRef(false);
 
-  const goTo = (index: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const newIndex = ((index % images.length) + images.length) % images.length;
-    setCurrent(newIndex);
-    gsap.to(track, {
-      x: `-${newIndex * 100}%`,
-      duration: 0.7,
-      ease: "power2.inOut",
+  const animate = useCallback((next: number) => {
+    if (!imgRef.current) { setCurrent(next); return; }
+    gsap.to(imgRef.current, {
+      opacity: 0, scale: 1.03, duration: 0.35, ease: "power2.in",
+      onComplete: () => {
+        setCurrent(next);
+        gsap.fromTo(imgRef.current, { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" });
+      },
     });
-  };
+  }, []);
 
-  const next = () => goTo(current + 1);
-  const prev = () => goTo(current - 1);
+  const go = useCallback((dir: number) => {
+    const next = ((current + dir) % images.length + images.length) % images.length;
+    animate(next);
+  }, [current, images.length, animate]);
 
-  // Auto-slide every 3.5 seconds
+  // Stable auto-advance interval
   useEffect(() => {
-    intervalRef.current = setInterval(next, 3500);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [current]);
+    timerRef.current = setInterval(() => {
+      if (!pausedRef.current) {
+        const next = (current + 1) % images.length;
+        animate(next);
+      }
+    }, 4000);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [current, images.length, animate]);
 
-  // Pause on hover
-  const pause = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-  };
-  const resume = () => {
-    intervalRef.current = setInterval(next, 3500);
-  };
+  const pause = () => { pausedRef.current = true; };
+  const resume = () => { pausedRef.current = false; };
 
   return (
     <div
-      className="relative overflow-hidden rounded-lg shadow-soft-lg"
+      className="group relative overflow-hidden rounded-xl shadow-soft-lg"
       onMouseEnter={pause}
       onMouseLeave={resume}
     >
-      {/* Track */}
-      <div
-        ref={trackRef}
-        className="flex"
-        style={{ width: `${images.length * 100}%` }}
-      >
-        {images.map((img, i) => (
-          <div
-            key={i}
-            className="relative w-full shrink-0"
-            style={{ width: `${100 / images.length}%` }}
-          >
-            <div className="aspect-[16/9] sm:aspect-[21/9]">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        ))}
+      <div className="aspect-[16/9] sm:aspect-[21/9]">
+        <img
+          ref={imgRef}
+          src={images[current].src}
+          alt={images[current].alt}
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Arrows */}
+      {/* Left arrow */}
       <button
-        onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-ink/70 hover:text-gold hover:bg-white transition-all shadow-soft"
+        onClick={() => go(-1)}
         aria-label="Previous"
+        className="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-soft opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <ChevronLeft className="h-5 w-5 text-ink" />
       </button>
+
+      {/* Right arrow */}
       <button
-        onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-ink/70 hover:text-gold hover:bg-white transition-all shadow-soft"
+        onClick={() => go(1)}
         aria-label="Next"
+        className="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-soft opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
       >
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-5 w-5 text-ink" />
       </button>
 
       {/* Dots */}
@@ -92,11 +80,11 @@ export function ImageSlider({ images }: Props) {
         {images.map((_, i) => (
           <button
             key={i}
-            onClick={() => goTo(i)}
+            onClick={() => animate(i)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? "w-6 bg-gold" : "w-2 bg-white/60"
+              i === current ? "w-7 bg-gold" : "w-2 bg-white/50 hover:bg-white/80"
             }`}
-            aria-label={`Go to slide ${i + 1}`}
+            aria-label={`Slide ${i + 1}`}
           />
         ))}
       </div>

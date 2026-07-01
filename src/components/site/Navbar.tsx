@@ -33,13 +33,13 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 ${
-        scrolled ? "bg-white shadow-soft py-1.5" : "bg-transparent py-2.5"
+        scrolled ? "bg-white shadow-soft py-1.5" : "bg-white/90 backdrop-blur-sm py-2.5"
       }`}
     >
       {/* Desktop */}
       <div className="hidden lg:flex max-w-7xl mx-auto px-6 items-center justify-between">
         <Link to="/" aria-label="J Salon Unisex" className="shrink-0">
-          <Logo size={64} className={scrolled ? "" : "brightness-0 invert"} />
+          <Logo size={64} />
         </Link>
 
         <nav className="flex items-center gap-8">
@@ -52,7 +52,7 @@ export function Navbar() {
                 `relative text-[13px] font-medium uppercase tracking-[0.08em] pb-1 transition-colors ${
                   isActive
                     ? "text-gold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gold"
-                    : scrolled ? "text-ink/60 hover:text-gold" : "text-white/80 hover:text-gold"
+                    : "text-ink/60 hover:text-gold"
                 }`
               }
             >
